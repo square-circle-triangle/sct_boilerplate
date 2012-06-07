@@ -118,3 +118,44 @@ app.utils = {
 	}
 
 }
+
+// -------------------------- //
+// MODULE PATTERN EXAMPLE
+// -------------------------- //
+
+var page = (function(){
+	
+	var _self = {};
+	
+	function init(){
+		page.example.init();
+	}
+	
+	_self = {
+		init : init
+	};
+	
+	return _self;
+	
+})();
+
+
+// -------------------------- //
+// EXAMPLE NAME
+// -------------------------- //
+
+page.example = (function(){
+	
+	var _self = {};
+	
+	function init(){
+		
+	}
+	
+	_self = {
+		init : init
+	};
+	
+	return _self;
+	
+})();
