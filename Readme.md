@@ -1,6 +1,7 @@
 # Blocks Front-End Templater Guide
 * [Page Templates](#page_templates)
-** Global Helpers](#pt_global)
+** [Global Helpers](#pt_global)
+** [Editable Regions](# pt_editable)
 	
 
 <a name="page_templates"/>
@@ -39,5 +40,15 @@ Return current year
 ```
 <%= now.year %>
 ```
-
-
+<a name="pt_editable"/>
+### Editable Regions
+#### Single Line Text Regions
+For heading raw text. Allows character limits using `:maxlength` property.
+```
+<%= render :textual => 'heading_text', :default => 'Main Heading', :maxlength => '100' %>
+```
+#### Text Areas with TinyMCE Editor
+Body text, allows client to add links and styling (ie. bullet points, bold, italic, H1 - H6) - set by adding `:type => :multi`
+```
+<%= render :textual => 'body_text', :default => "<p>Body Copy Goes Here</p>", :type=> :multi %>
+```
