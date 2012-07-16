@@ -1,6 +1,6 @@
 # Blocks Front-End Templater Guide
 * [Page Templates](#page_templates)
-* * [Global Helpers](#pt_global)
+	** [Global Helpers](#pt_global)
 
 <a name="page_templates"/>
 ## Page Templates
@@ -8,22 +8,22 @@
 ### Global Helpers
 #### Title
 Return the page title
-```ruby
-<%= title %>
+```
+<%= title %>
 ```
 #### Description
 Return the page description
-```ruby
+```
 <%= description %>
 ```
 #### Keywords
 Return a comma seperated list of tags
-```ruby
+```
 <%= keywords %>
 ```
 #### Site Name
 Returns the site name
-```ruby
+```
 //Full site name	
 <%= site_name %>
 
@@ -35,7 +35,7 @@ Returns the site name
 ```
 #### Time/Date
 Return current year
-```ruby
+```
 <%= now.year %>
 ```
 
