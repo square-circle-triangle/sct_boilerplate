@@ -1,6 +1,7 @@
 # Blocks Front-End Templater Guide
 * [Page Templates](#page_templates)
-	** [Global Helpers](#pt_global)
+** Global Helpers](#pt_global)
+	
 
 <a name="page_templates"/>
 ## Page Templates
