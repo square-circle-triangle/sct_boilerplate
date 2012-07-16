@@ -1,13 +1,13 @@
 # Blocks Front-End Templater Guide
 - [Global Variables](#global)
 - [Page Templates](#page_templates)
--- [Text Regions](#text_regions)
+- - [Text Regions](#text_regions)
 
 <a name="global"/>
 ## Global Variables
 ### Page Title
 Returns the page title
-```
+```ruby
 	<a href="asdfadsf">asdfasdf</a>
 	<%= description %>
 ```
