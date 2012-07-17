@@ -50,11 +50,13 @@ Blocks offers the following Editable Regions:
 - Image region `:image`
 - Media region `:media`
 - Repeating region `:region`
+
 ### Syntax Overview
 Declare the type of region to render:	`<%= render :region_type`
 Set the unique name of the region:	`<%= render :region_type => 'unique_name'` 
 *Each variable name must be unique within its document.  Region names are restricted to alphanumerics and underscores.  Hyphens will not work.* 
 Most regions allow for *default* content to be set, using the `:default` property.
+
 ### Text Regions
 #### Single Line Text Regions
 For single-line raw text input. 
@@ -62,18 +64,21 @@ Allows character limits using `:maxlength` property.
 ```
 <%= render :textual => 'region_name', :default => 'Lorem Ipsum', :maxlength => '100' %>
 ```
+
 #### Text Areas with TinyMCE Editor
 For TinyMCE wysiwyg text input. 
 Set by defining `:type => :multi`
 ```
 <%= render :textual => ' region_name ', :default => "<p>Lorem Ipsum</p>", :type=> :multi %>
 ```
+
 #### Text Areas *without* TinyMCE Editor
 For multi-line text input, *without* a wysiwyg editor. 
 Set by defining `:type => :multi` *and* `:wysiwyg => false`
 ```
 <%= render :textual => ' region_name ', :default => "<p>Lorem Ipsum</p>", :type=> :multi, :wysiwyg => false %>
 ```
+
 ### Image Regions
 #### Fixed Width/Height Image Regions
 Allows images to be uploaded, but restricts images to an exact pixel dimension. *Blocks provides image cropping for images that exceed the set dimensions.*
@@ -81,12 +86,14 @@ Default placeholder image is set using the `:default` property.
 ```
 <%= render :image => 'region_name',  :default => "http://placehold.it/400x200", :width => 400, :height => 200 %>
 ```
+
 #### Variable Width/Height Image Regions
 Variable Width and/or height range can be specified using the following syntax `:width => 100..200` 
 ```
 <%= render :image => 'region_name', :default => "http://placehold.it/400x200", :width => 100..600, :height => 100..400 %>
 ```
 *Note that width dimensions can be fixed, while height is variable and visa versa.*
+
 ### Link Regions
 #### Text-based Link Regions
 Link regions allow extra properties:
