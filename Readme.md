@@ -49,13 +49,14 @@ Blocks offers the following Editable Regions:
 - Link region `:link`
 - Image region `:image`
 - Media region `:media`
-- Repeating region `:region`
 
 ### Syntax Overview
 Declare the type of region to render:	`<%= render :region_type`
 Set the unique name of the region:	`<%= render :region_type => 'unique_name'` 
+
 *Each variable name must be unique within its document.  Region names are restricted to alphanumerics and underscores.  Hyphens will not work.* 
-Most regions allow for *default* content to be set, using the `:default` property.
+
+Most regions allow for *default* content to be set, using the `:default` property, exceptions are link regions (see below)
 
 ### Text Regions
 #### Single Line Text Regions
@@ -94,6 +95,12 @@ Variable Width and/or height range can be specified using the following syntax `
 ```
 *Note that width dimensions can be fixed, while height is variable and visa versa.*
 
+#### Media Regions
+Media Regions follow the same rules as Image Regions, but allow for images, video or swf files to be uploaded.
+```
+<%= render :media => 'region_name', :default => "http://placehold.it/400x200", :width => 100..600, :height => 100..400 %>
+```
+
 ### Link Regions
 #### Text-based Link Regions
 Link regions allow extra properties:
@@ -103,10 +110,31 @@ Link regions allow extra properties:
 - `:link_kind`
 - `:link_value`
 - `:subject`
+
 ```
 <%= render :link => "region_name", :text => "Default Link Text", :link_value => '#', :text_editable => true %>
 ```
+
 Link regions also allow for in-line attributes using the `:html` property. Particularly useful for styling EDMs
+
 ```
 <%= render :link => " region_name", :text => "Default Link Text", :link_value => '#', :text_editable => true, :html => { :style => "margin: 20px;", :align => 'right'} %>
 ```
+
+#### Wrapping Link Regions
+For link regions that don't contain text, but rather, *wrap* blocks of content, including other editable regions, employ the following syntax: 
+```
+<% render :link => 'region_name', :text_editable => false do %>
+		<!-- HTML content goes here. Other editable regions, ie. Image Regions can also go here -->
+<% end %>
+```
+
+## Repeating Regions
+Blocks allows for sections of content, including editable regions to be repeated by users.  Control over the maximum repeats is handled by the `:max_repeats` property.
+```
+<% render :region => 'region_name', :max_repeats => 5 do %>
+		<!-- HTML content / Blocks editable regions go here. 
+		NB: You CANNOT have repeating regions inside repeating regions -->
+<% end %>
+```
+
