@@ -42,36 +42,64 @@ Return current year
 <%= now.year %>
 ```
 <a name="pt_text"/>
+## Editable Regions
+Editable Regions define areas of a template that can have their content set by a user of Blocks.
+Blocks offers the following Editable Regions:
+- Text region `:textual`
+- Link region `:link`
+- Image region `:image`
+- Media region `:media`
+- Repeating region `:region`
+### Syntax Overview
+Declare the type of region to render:	`<%= render :region_type`
+Set the unique name of the region:	`<%= render :region_type => 'unique_name'` 
+*Each variable name must be unique within its document.  Region names are restricted to alphanumerics and underscores.  Hyphens will not work.* 
+Most regions allow for *default* content to be set, using the `:default` property.
 ### Text Regions
 #### Single Line Text Regions
-For heading raw text. Allows character limits using `:maxlength` property.
+For single-line raw text input. 
+Allows character limits using `:maxlength` property.
 ```
-<%= render :textual => 'heading_text', :default => 'Main Heading', :maxlength => '100' %>
+<%= render :textual => 'region_name', :default => 'Lorem Ipsum', :maxlength => '100' %>
 ```
 #### Text Areas with TinyMCE Editor
-Body text, allows client to add links and styling (ie. bullet points, bold, italic, H1 - H6) - set by adding `:type => :multi`
+For TinyMCE wysiwyg text input. 
+Set by defining `:type => :multi`
 ```
-<%= render :textual => 'body_text', :default => "<p>Body Copy Goes Here</p>", :type=> :multi %>
+<%= render :textual => ' region_name ', :default => "<p>Lorem Ipsum</p>", :type=> :multi %>
 ```
-<a name="pt_image"/>
+#### Text Areas *without* TinyMCE Editor
+For multi-line text input, *without* a wysiwyg editor. 
+Set by defining `:type => :multi` *and* `:wysiwyg => false`
+```
+<%= render :textual => ' region_name ', :default => "<p>Lorem Ipsum</p>", :type=> :multi, :wysiwyg => false %>
+```
 ### Image Regions
 #### Fixed Width/Height Image Regions
-Allows images to be uploaded, but restricts images to an exact pixel width and height
+Allows images to be uploaded, but restricts images to an exact pixel dimension. *Blocks provides image cropping for images that exceed the set dimensions.*
+Default placeholder image is set using the `:default` property.
 ```
-<%= render :image => 'main_img',  :default => "http://placehold.it/400x200", :width => 400, :height => 200 %>
+<%= render :image => 'region_name',  :default => "http://placehold.it/400x200", :width => 400, :height => 200 %>
 ```
 #### Variable Width/Height Image Regions
-Width and/or height range can be specified - ie. Width can be fixed, while height is variable.
+Variable Width and/or height range can be specified using the following syntax `:width => 100..200` 
 ```
-<%= render :image => 'variable_img', :default => "http://placehold.it/400x200", :width => 100..600, :height => 100..400 %>
+<%= render :image => 'region_name', :default => "http://placehold.it/400x200", :width => 100..600, :height => 100..400 %>
 ```
-<a name="pt_link"/>
+*Note that width dimensions can be fixed, while height is variable and visa versa.*
 ### Link Regions
 #### Text-based Link Regions
+Link regions allow extra properties:
+- `:text`
+- `:title`
+- `:new_window` *Boolean*
+- `:link_kind`
+- `:link_value`
+- `:subject`
 ```
-<%= render :link => "footer_link", :text => "Footer Link 1", :text_editable => true %>
+<%= render :link => "region_name", :text => "Default Link Text", :link_value => '#', :text_editable => true %>
 ```
-#### Text-based Link Regions With In-Line Attributes (for EDMS)
+Link regions also allow for in-line attributes using the `:html` property. Particularly useful for styling EDMs
 ```
-<%= render :link => "footer_link", :text => "Footer Link 1", :text_editable => true %>
+<%= render :link => " region_name", :text => "Default Link Text", :link_value => '#', :text_editable => true, :html => { :style => "margin: 20px;", :align => 'right'} %>
 ```
