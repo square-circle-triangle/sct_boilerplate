@@ -9,21 +9,25 @@
 ## Page Templates
 <a name="pt_global"/>
 ### Global Helpers
+
 #### Title
 Return the page title
 ```
 <%= title %>
 ```
+
 #### Description
 Return the page description
 ```
 <%= description %>
 ```
+
 #### Keywords
 Return a comma seperated list of tags
 ```
 <%= keywords %>
 ```
+
 #### Site Name
 Returns the site name
 ```
@@ -36,12 +40,13 @@ Returns the site name
 //site name with non-ascii characters and whitespace replaced with hyphens	
 <%= site_name_clean %>
 ```
+
 #### Time/Date
 Return current year
 ```
 <%= now.year %>
 ```
-<a name="pt_text"/>
+
 ## Editable Regions
 Editable Regions define areas of a template that can have their content set by a user of Blocks.
 Blocks offers the following Editable Regions:
@@ -138,3 +143,27 @@ Blocks allows for sections of content, including editable regions to be repeated
 <% end %>
 ```
 
+## Includes
+Blocks allows for 3 types of includes:
+
+### Navigation Includes
+Navigation includes are intrinsically linked to a *Navigation Set* and a *Navigation Template* 
+
+Rendering a *Navigation Template* called `main.nav` that reads its data from the *Navigation Set* called `Main` is written as follows: 
+```
+<%= render :navigation => "Main", :template_name => 'main.nav' %>
+```
+
+### Global Widget Includes
+Global Widgets allow for a global template to be included across multiple sites. 
+```
+<%= include_widget("widget_name") %>
+````
+
+### Site Widget Includes
+Site Widgets allow for a template to be included across multiple templates, within a single site. 
+```
+<%= include_site_widget("widget_name") %>
+````
+
+ 
