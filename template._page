@@ -36,6 +36,15 @@
 
 		<div id="main" role="main">
 			
+
+			<!-- 
+
+				DON'T EVER USER HYPHENS IN REGION NAMES
+				OR PUPPIES WILL DIE
+				
+			 -->
+
+
 			<!-- BREADCRUMBS -->
 			<% @breadcrumbs.each_with_index do |crumb,i| %>
 				<% if i > 0 %>
