@@ -63,13 +63,24 @@
 		
 			
 			<!-- LINK REGION -->
-			<%= render :link => "link_region", :text_editable => true, :link_value => "#", :text => "Read More" %>
+			<%= render :link => "link_region", :text_editable => true, :link_value => "#", :text => "Read More", :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } %>
 			
+
+			<!-- LINK WRAPPED CONTENT -->
+			<% render :link => "link_wrap", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
+				<!-- content -->
+			<% end %>
 			
+
 			<!-- IMAGE REGION -->
-			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200" %>
+			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;" } %>
 			
-			
+
+			<!-- MEDIA REGION -->
+			<%= render :media => 'media_region',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
+			<!-- if possible use youtube/vimeo embeds instead for video, Blocks video support is still kind of fragile -->
+
+
 			<!-- SINGLE LINE TEXT REGION -->
 			<%= render :textual => 'single_line_text', :default => 'Proin vel ante a orci tempus', :maxlength => '75' %>
 			
@@ -87,18 +98,18 @@
 				<!-- content -->
 			<% end %>
 			
-			
-			<!-- LINK WRAPPED CONTENT -->
-			<% render :link => "link_wrap", :text_editable => false, :link_value => '#' do %>
-				<!-- content -->
-			<% end %>
-			
-			<!-- MEDIA REGION -->
-			<%= render :media => 'media_region',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
-			
-			
+
 			<!-- FORM ACTION -->
-			<form method="POST" action="<%= form_action_url('form_action_name') %>" class="" accept-charset="utf-8">
+			<form method="POST" action="#" class="" accept-charset="utf-8">
+				<div class="form_action" style="display:none;"><%= form_action_url('form_action_name') %></div>
+				<!-- use JavaScript to insert form action to form tag; helps against spam bots -->
+				<!-- 
+					example:
+					// please rewrite nicely this just shows concept
+					$('form').each(function(){
+						$(this).attr('action', $.trim($(this).find('.form_action').text()) );
+					}); 
+				-->
 				<input type="text" name="" value="">
 				<button type="submit">Submit</button>
 			</form>
