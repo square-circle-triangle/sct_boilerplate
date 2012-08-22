@@ -1,3 +1,29 @@
+
+/*
+	BLOCKS HELPER CSS
+*/
+
+/* stretches text regions to full width */
 body.edit div#blocks-wrapper div#inner-blocks-wrapper textarea {
 	width: 100%;
+}
+
+/* shows page url bottom right in edit mode */
+#page_url_helper {
+	text-align: center;
+	position: fixed;
+	background: #111;
+	bottom: 0;
+	right: 0;
+	z-index: 9999;
+	color: white;
+	font-size: 10px;
+	padding: 3px 10px;
+	border-radius: 3px 0 0 0;
+	-webkit-box-shadow: 0 0 5px 0 #999;
+	   -moz-box-shadow: 0 0 5px 0 #999;
+	        box-shadow: 0 0 5px 0 #999;
+}
+#page_url_helper a {
+	color: white;
 }

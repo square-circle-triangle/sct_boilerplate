@@ -28,11 +28,6 @@
 	<% end %>
 </head>
 <body id="page-<%= @page.id %>" <%= 'class="live"' if @mode == 'edit' %>>
-	<% if @mode == 'edit' %>
-		<div class="page_url_helper">
-			Page url: <a href="<%= @page.url %>"><%= @page.url %></a>
-		</div>
-	<% end %>
 
 	<div id="container">
 		<header>
@@ -132,5 +127,14 @@
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/plugins.js"></script>
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/script.js"></script>
 
+	<% if @mode == 'edit' %>
+	<!-- 
+		This adds a link to the live url within Blocks edit mode:
+	 -->
+		<div id="page_url_helper">
+			Page url: <a href="<%= @page.url %>"><%= @page.url %></a>
+		</div>
+	<% end %>
+	
 </body>
 </html>
