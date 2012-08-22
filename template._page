@@ -132,9 +132,9 @@
 		This adds a link to the live url within Blocks edit mode:
 	 -->
 		<div id="page_url_helper">
-			Page url: <a href="<%= @page.url %>"><%= @page.url %></a>
+			Page url: <a href="<%= @page.url %>" target="_blank"><%= @page.url %></a>
 		</div>
 	<% end %>
-	
+
 </body>
 </html>

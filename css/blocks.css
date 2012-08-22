@@ -12,7 +12,7 @@ body.edit div#blocks-wrapper div#inner-blocks-wrapper textarea {
 #page_url_helper {
 	text-align: center;
 	position: fixed;
-	background: #111;
+	background: #333;
 	bottom: 0;
 	right: 0;
 	z-index: 9999;
