@@ -69,7 +69,7 @@
 			
 
 			<!-- IMAGE REGION -->
-			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;" } %>
+			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
 			
 
 			<!-- MEDIA REGION -->
