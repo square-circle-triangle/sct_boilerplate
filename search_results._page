@@ -31,7 +31,7 @@
 		<div id="main" role="main">
 			
 			<!-- SITE SEARCH FORM -->
-			<form id="site_search" action="<%= @page.site.primary_domain %>/searches/pages">
+			<form id="site_search" method="GET" action="<%= @page.site.primary_domain %>/searches/pages">
 				<input type="hidden" name="per_page" value="25">
 				<input type="hidden" name="sort_mode" value="relevance">
 				<input type="hidden" name="site_only" value="1">
