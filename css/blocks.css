@@ -30,14 +30,14 @@ body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper di
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .asset-id { 	display: none; }
 
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width { }
-body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width:before { content: 'Min. dimensions: '; }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width:before { content: 'Min.: '; }
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width:after { content: ' x'; }
 
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-height { }
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-height:after { content: 'px'; }
 
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width { }
-body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width:before { content: '| Max. dimensions: '; }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width:before { content: '| Max.: '; }
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width:after { content: ' x'; }
 
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-height { }
