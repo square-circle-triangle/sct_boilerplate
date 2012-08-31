@@ -8,6 +8,42 @@ body.edit div#blocks-wrapper div#inner-blocks-wrapper textarea {
 	width: 100%;
 }
 
+
+/*
+	these rules will show max/min image dimensions on image regions using the existing
+*/
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element {
+	position: absolute;
+	top: 0;
+	left: 136px;
+	background: white;
+	font-size: 11px;
+	line-height: 1em;
+	padding: 5px 5px 6px 5px;
+	margin: 1px;
+	display: block;
+}
+.ie7 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element { display: none; }
+
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .width,
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .height,
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .asset-id { 	display: none; }
+
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width { }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width:before { content: 'Min. dimensions: '; }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-width:after { content: ' x'; }
+
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-height { }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .min-height:after { content: 'px'; }
+
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width { }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width:before { content: '| Max. dimensions: '; }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-width:after { content: ' x'; }
+
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-height { }
+body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-height:after { content: 'px'; }
+
+
 /* shows page url bottom right in edit mode */
 #page_url_helper {
 	text-align: center;
