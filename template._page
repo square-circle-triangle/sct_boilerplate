@@ -109,6 +109,30 @@
 				<input type="text" name="" value="">
 				<button type="submit">Submit</button>
 			</form>
+
+
+
+
+			<!-- SELECT BOX / SET REGION -->
+			<%= render :set => 'led_color', :values => [ [ 'Australia', :Australia ], [ 'Africa', :Africa ] ] %>
+			<!-- This will return a select box with the string being the text shown and values are strings so :Australia = 'Australia' -->
+
+
+
+
+			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE -->
+			<% if @mode == 'edit' %>
+			 	<%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
+			<% end %>
+			<% if @mode == 'edit' ||  valueOfSetRegionAbove == 'ON' || valueOfSetRegionAbove.isNotSet %>
+			 <!-- Whatever you want to hide or show according to the ON/OFF setting -->
+			<% end %>
+
+
+
+
+
+
 			
 			
 			<!-- SITE WIDGET -->
