@@ -120,22 +120,36 @@
 
 
 
+<!-- NOT READY ==================-->
 
-			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE -->
+			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE (! NOT within repeating region)-->
 			<% if @mode == 'edit' %>
 			 	<%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
 			<% end %>
-			<% if @mode == 'edit' ||  valueOfSetRegionAbove == 'ON' || valueOfSetRegionAbove.isNotSet %>
+			<% if @mode == 'edit' ||  @page.page_elements('toggle_visibility_01', :value) == 'ON' %>
 			 <!-- Whatever you want to hide or show according to the ON/OFF setting -->
 			<% end %>
+<!-- not ready ================= < -->
 
 
 
 
-
-
+			<!-- HIDE OR SHOW CONTENT BY CLASS ( OK TO USE WITHIN REPEATING REGION ) -->
+			<div class="some classes  <% if @mode == 'edit' %>"><h4 class="ruby_hider_select_note">Please select if you would like the area on or off:</h4><% end %><%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :VISIBILITY_ON ], [ 'OFF', :VISIBILITY_OFF ] ] %><% if @mode != 'edit' %>"><% end %>
+				 <!-- Whatever you want to hide or show according to the VISIBILITY_ON/VISIBILITY_OFF CSS setting -->
+				 <!-- You will need to add CSS to hide or show according to the classes applied, classes:
+				      VISIBILITY_ON
+				      VISIBILITY_OFF
+				      ruby_hider_select_note
+				 -->
+			</div>
 			
 			
+
+
+
+
+
 			<!-- SITE WIDGET -->
 			<%= include_site_widget('widget_name') %>
 			
