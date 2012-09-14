@@ -266,13 +266,13 @@ form label.error {
 
 /* ==|== media queries ====================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
 
 	/*
 		helps you tell what media query is applied
 	*/
 	body:before {
-		content: 'min-width: 480px';
+		content: 'max-width: 480px';
 		position: fixed;
 		top: 0px;
 		left: 50%;

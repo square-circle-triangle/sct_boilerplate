@@ -1,0 +1,169 @@
+/* =======================================
+	
+	responsive
+	FORM STYLES
+	v 0.1
+
+======================================= */
+
+#container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.form {
+	background-color: #f5f5f5;
+	padding: .5em;
+}
+
+.form .form_action {
+	display: none;
+}
+
+.form,
+.form * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.form .form_row {
+	/*border: 1px dotted red;*/
+}
+
+.form .form_item {
+	float: left;
+	width: 49%;
+	/*border: 1px solid blue;*/
+	margin-bottom: 1.5em;
+	position: relative;
+}
+
+.form .form_item + .form_item {
+	margin-left: 2%;
+}
+
+.form .form_item.full {
+	float: none;
+	width: 100%;
+}
+
+.form .form_item.third {
+	width: 32%;
+}
+
+.form .form_item.two_thirds {
+	width: 66%;
+}
+
+.form label {
+	display: block;
+	margin: 0 0 .3em 0;
+}
+
+.form input[type=text],
+.form input[type=password],
+.form textarea {
+	outline: none;
+	border: 1px solid #ccc;
+	width: 100%;
+	padding: .3em .5em;
+}
+
+.form textarea {
+	height: 6em;
+	resize: vertical;
+}
+
+.form .form_actions {
+
+}
+
+.form .form_actions .form_item.full {
+	/*width: auto;*/
+}
+
+.form_actions .submit {
+
+}
+
+.form .ajax_spinner {
+	float: right;
+	display: none;
+}
+
+.form .submit {
+	float: right;
+}
+
+.form .form_item_group {
+
+}
+
+.form .form_item_group + .form_item_group {
+	border-top: 1px dotted #000;
+}
+
+.form .form_group_header {
+	font-size: 1.3em;
+	margin: 1em 0;
+}
+
+.form .form_item_group .form_row:first-child {
+	margin-top: 1em;
+}
+
+
+/* error styles */
+
+.form_item.error {
+
+}
+
+.form .error label {
+	color: #c00;
+}
+
+.form .error input[type=text],
+.form .error input[type=password],
+.form .error textarea {
+	color: #c00;
+	border: 1px solid #c00;
+}
+
+.form .error em {
+	display: block;
+	height: auto;
+	color: #c00;
+	font-size: .8em;
+	line-height: 2em;
+	position: absolute;
+	top: 100%;
+	right: 0;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+	.form .form_item {
+		width: 100%;
+	}
+
+	.form .form_item + .form_item {
+		margin-left: 0%;
+	}
+
+	.form .form_item.third {
+		width: 100%;
+	}
+
+	.form .form_item.two_thirds {
+		width: 100%;
+	}
+}
+
+/* =======================================
+   end of responsive form styles
+======================================= */
+
