@@ -29,8 +29,10 @@
 
 		</header>
 		<div id="main" role="main">	
-		
-			
+			<p style="text-align:center;">
+				<button id="change_form">Change Form Style (add "vertical" class)</button>
+			</p>
+
 			<form method="POST" action="#" id="form_id" class="form">
 
 				<div class="form_action" style="display:none;">http://form-action-url.dev</div>
@@ -62,7 +64,7 @@
 
 						<div class="form_item">
 							<label>Email *</label>
-							<input type="text" name="email" class="required email" value="Your email address" data-placeholder="Your email address">
+							<input type="text" name="email" class="required email" value="" data-placeholder="Your email address">
 						</div>
 
 						<div class="form_item">
@@ -108,9 +110,13 @@
 							<input type="text" name="state" class="">
 						</div>
 
-						<div class="form_item">
+						<div class="form_item selectbox">
 							<label>Country</label>
-							<input type="text" name="country" class="">
+							<select name="country" class="required">
+								<option value="">Please select</option>
+								<option value="AU">Australia</option>
+								<option value="NZ">New Zealand</option>
+							</select>
 						</div>
 
 					</div> <!-- .form_row -->
@@ -123,11 +129,18 @@
 
 					<h3 class="form_group_header">Your favourite fruits</h3>
 
+					<div class="form_info">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+					</div>
+
 					<div class="form_row clearfix">
 
 						<div class="form_item third">
 							<label>Apples</label>
 							<input type="text" name="apples" class="">
+							<div class="form_info">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+							</div>
 						</div>
 
 						<div class="form_item third">
@@ -232,7 +245,7 @@
 					<div class="form_row clearfix">
 
 						<div class="form_item full">
-							<label>Comments</label>
+							<label>This is supposed to be quite a long label for this textarea</label>
 							<textarea name="notes" class=""></textarea>
 						</div>
 
@@ -246,22 +259,22 @@
 
 					<div class="form_row form_actions clearfix">
 
-						<img src="img/ajax/indicator.gif" class="ajax_spinner">
-
-						<button type="submit" class="submit">Send</button>
-
 						<div class="form_item two_thirds checkbox">
 							<label>
-								<input type="hidden" name="toc_read" value="no">
-								<input type="checkbox" name="toc_read" value="yes"> Terms &amp; Conditions acknowledged
+								<input type="hidden" name="toc_read" value="">
+								<input type="checkbox" name="toc_read" value="yes" class="required"> Terms &amp; Conditions acknowledged
 							</label>
 						</div>
+
+						<img src="img/ajax/indicator.gif" class="ajax_spinner">
+						<button type="submit" class="submit">Send</button>
 
 					</div> <!-- .form_row -->
 
 				</div> <!-- .form_item_group -->
 				
 			</form>
+
 
 
 		</div>
@@ -274,5 +287,14 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/form_helper.js"></script>
+	<script>
+	$(function(){
+
+		$('#change_form').on('click',function(){
+			$('form').toggleClass('vertical');
+		});
+
+	});
+	</script>
 </body>
 </html>

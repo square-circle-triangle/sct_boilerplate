@@ -14,7 +14,7 @@ var FormHelper = (function(){
 
 
 	function init(){
-		console.log('INIT');
+
 		_forms = $('form');
 
 		// add placeholder functionality to text inputs
@@ -35,6 +35,12 @@ var FormHelper = (function(){
 		formActionReplacement();
 
 
+
+		//
+		replaceSelectBoxes();
+		replaceRadioAndCheckboxes();
+
+
 		// Form validation using jQuery Validate plugin (in plugin.js)
 		// Replace with custom function if needed
 		validateForms();
@@ -44,6 +50,17 @@ var FormHelper = (function(){
 
 	function formPlaceholder(){
 
+		// set placeholder to value
+		var _inputs = _forms.find('input[data-placeholder]');
+		_inputs.each(function(){
+			var _this = $(this),
+				_placeholder = _this.data('placeholder');
+			if( typeof _placeholder === 'string' ){
+				_this.val()
+			}
+			
+		});
+		// bind events
 		_forms.on('focus','input[type=text]',function(){
 
 			var _input       = $(this),
@@ -85,7 +102,7 @@ var FormHelper = (function(){
 
 
 	function validateForms(){
-		console.log('validate');
+
 		_forms.validate({
 			// Change the default error element to <em> for easy hiding with CSS if not required
 			errorElement: "em",
@@ -106,15 +123,14 @@ var FormHelper = (function(){
 
 			errorPlacement: function(error, element) {
 				var _type = element.attr('type');
-				console.log('errorPlacement');
 
 				if( _type === 'checkbox' ){
 					// do checkbox specific stuff
-					// return;
+					return;
 				}
 				else if( _type === 'radio' ){
 					// do radio specific stuff
-					// return;
+					return;
 				}
 
 				element.closest('.form_item').append(error);
@@ -142,6 +158,57 @@ var FormHelper = (function(){
 		}
 		
 		$(element).closest('.form_item').removeClass(classToRemove).addClass(classToAdd);
+	}
+
+
+
+	function replaceSelectBoxes(){
+
+		$('.selectbox').each(function(){
+			var _itemDiv    = $(this),
+				_select     = _itemDiv.find('select'),
+				_value      = $.trim(_select.find(':selected').text()) || '&nbsp;',
+				_selectWrap = $('<div class="select_wrap"><span>'+_value+'</span></div>');
+
+			_select.detach().appendTo(_selectWrap);
+			_selectWrap.appendTo(_itemDiv);
+		}).on('change','select',function(){
+			var _select          = $(this),
+				_val             = $.trim(_select.find(':selected').text()) || '&nbsp;',
+				_spanReplacement = _select.siblings('span');
+
+			_spanReplacement.html(_val);
+		});
+
+	}
+
+
+	function replaceRadioAndCheckboxes(){
+		$('.radio,.checkbox').find('input[type=checkbox],input[type=radio]').each(function(){
+			var _input     = $(this),
+				_parent    = _input.parent(),
+				_inputWrap = $('<div class="checkbox_wrap" />');
+
+			if( _input.is(':checked') ){
+				_parent.addClass('checked');
+			}
+
+			_input.detach().appendTo(_inputWrap);
+			_inputWrap.prependTo(_parent);
+		}).on('change',function(e){
+			var _input = $(this),
+				_name  = _input.attr('name'),
+				_type  = _input.attr('type');
+
+			if( _type === 'checkbox'){
+				$(this).closest('label').toggleClass('checked');
+			}
+			else if( _type === 'radio' ) {
+				$('input[name="'+_name+'"]').closest('label').removeClass('checked');
+				$(this).closest('label').addClass('checked');
+			}
+			
+		});
 	}
 
 

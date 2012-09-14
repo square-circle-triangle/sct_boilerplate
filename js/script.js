@@ -1,72 +1,31 @@
 $(function(){
-	app.init();
+
 });
+
+// -------------------------- //
+// HELPER FUNCTIONS
+// -------------------------- //
+
+var Helper = (function(){
+	
+	var _self = {};
+	
+	function init(){
+		page.example.init();
+	}
+	
+	_self = {
+		init : init
+	};
+	
+	return _self;
+	
+})();
+
 
 var app = {
 	init:function(){
-		app.registration.init();
 	}
-};
-
-app.registration = {
-	init:function(){
-
-		//Form Validation
-		var $form = $("#registration_form");
-		var that = this;
-
-		if($form.length){
-			$form.validate({
-				// Change the default error element to <em> for easy hiding with CSS if not required
-				errorElement: "em",
-				
-				//Adds "error" class to input label
-				highlight: function(element, errorClass, validClass) {
-					that.toggleHighlight(element,errorClass,validClass,false);
-				},
-			
-				//Removes "error" class to input label
-				unhighlight: function(element, errorClass, validClass) {
-					that.toggleHighlight(element,errorClass,validClass,true);
-				},
-
-				errorPlacement: function(error, element) {
-					if(element.attr('type')=='checkbox'){
-						error.appendTo( element.closest('fieldset') );
-					}else if(element.type=='select'){
-						error.appendTo(element.parent());
-					}else{
-						error.appendTo(element.parent());
-					}
-				}
-
-			});
-		}
-	},
-
-	toggleHighlight:function(element,errorClass,validClass,isValid){
-		
-		var type = $(element).attr('type');
-		
-		var classToAdd = isValid?validClass:errorClass;
-		var classToRemove = isValid?errorClass:validClass;
-		
-		if(type === "checkbox"){
-			$(element).closest("fieldset").find(".ez-checkbox").removeClass(classToRemove).addClass(classToAdd);
-			$(element).closest("fieldset").find("label").removeClass(classToRemove).addClass(classToAdd);
-			return;
-		}
-		
-		if(type === "radio"){
-			$(element).closest("fieldset").find(".ez-radio").removeClass(classToRemove).addClass(classToAdd);
-			$(element).closest("fieldset").find("label").removeClass(classToRemove).addClass(classToAdd);
-			return;
-		}
-		
-		$(element).removeClass(classToRemove).addClass(classToAdd);
-		$(element.form).find("label[for=" + element.id + "]").removeClass(classToRemove).addClass(classToAdd);
-	}
-
 };
 
 app.utils = {
