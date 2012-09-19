@@ -1,0 +1,356 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="TEMPLATE_NAME no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="TEMPLATE_NAME no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="TEMPLATE_NAME no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="TEMPLATE_NAME no-js" lang="en"> <!--<![endif]-->
+<head>
+	<!--
+		REPO_NAME
+		TEMPLATE_NAME
+	-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/form.css">
+
+	<script src="js/libs/modernizr-2.6.1.custom.min.js"></script>
+</head>
+<body>
+
+	<div id="container">
+		<header>
+
+		</header>
+		<div id="main" role="main">	
+			<p style="text-align:center;">
+				<button id="change_form">Change Form Style (add "vertical" class)</button>
+			</p>
+
+			<form method="POST" action="#" id="form_id" class="form">
+
+				<div class="form_action" style="display:none;">http://form-action-url.dev</div>
+
+
+				<div class="form_item_group">
+
+
+					<h3 class="form_group_header">Your Details</h3>
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item">
+							<label>First name *</label>
+							<input type="text" name="first_name" class="required">
+						</div>
+
+						<div class="form_item">
+							<label>Last name *</label>
+							<input type="text" name="last_name" class="required">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item">
+							<label>Email *</label>
+							<input type="text" name="email" class="required email" value="" data-placeholder="Your email address">
+						</div>
+
+						<div class="form_item">
+							<label>Phone</label>
+							<input type="text" name="home_phone" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item full">
+							<label>Address</label>
+							<input type="text" name="address" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item">
+							<label>Suburb</label>
+							<input type="text" name="suburb" class="">
+						</div>
+
+						<div class="form_item">
+							<label>Postcode</label>
+							<input type="text" name="postcode" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item">
+							<label>State</label>
+							<input type="text" name="state" class="">
+						</div>
+
+						<div class="form_item selectbox">
+							<label>Country</label>
+							<select name="country" class="required">
+								<option value="">Please select</option>
+								<option value="AU">Australia</option>
+								<option value="NZ">New Zealand</option>
+							</select>
+						</div>
+
+					</div> <!-- .form_row -->
+
+				</div> <!-- .form_item_group -->
+
+
+
+				<div class="form_item_group">
+
+					<h3 class="form_group_header">Your favourite fruits</h3>
+
+					<div class="form_info">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+					</div>
+
+					<div class="form_row clearfix">
+
+						<div class="form_item third">
+							<label>Apples</label>
+							<input type="text" name="apples" class="">
+							<div class="form_info">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+							</div>
+						</div>
+
+						<div class="form_item third">
+							<label>Oranges</label>
+							<input type="text" name="oranges" class="">
+						</div>
+
+						<div class="form_item third">
+							<label>Bananas</label>
+							<input type="text" name="bananas" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item third">
+							<label>Mangos</label>
+							<input type="text" name="magnos" class="">
+						</div>
+
+						<div class="form_item two_thirds">
+							<label>Pineapples</label>
+							<input type="text" name="pineapples" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item two_thirds">
+							<label>Persimmons</label>
+							<input type="text" name="persimmons" class="">
+						</div>
+
+						<div class="form_item third">
+							<label>Rockmelons</label>
+							<input type="text" name="rockmelons" class="">
+						</div>
+
+					</div> <!-- .form_row -->
+
+				</div> <!-- .form_item_group -->
+
+
+				<div class="form_item_group">
+
+					<h3 class="form_group_header">Quarters</h3>
+
+					<div class="form_row clearfix">
+						<div class="form_item">
+							<label>Lorem</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Ipsum</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Dolor</label>
+							<input type="text" name="" class="" value="">
+						</div>
+					</div> <!-- .form_row -->
+
+					<div class="form_row clearfix">
+						<div class="form_item quarter">
+							<label>Ipsum</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Dolor</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Ipsum</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Dolor</label>
+							<input type="text" name="" class="" value="">
+						</div>
+					</div> <!-- .form_row -->
+					
+					<div class="form_row clearfix">
+						<div class="form_item three_quarters">
+							<label>Ipsum</label>
+							<input type="text" name="" class="" value="">
+						</div>
+
+						<div class="form_item quarter">
+							<label>Dolor</label>
+							<input type="text" name="" class="" value="">
+						</div>
+					</div> <!-- .form_row -->
+				</div>
+
+
+				<div class="form_item_group">
+
+					<h3 class="form_group_header">Checkboxes & Radio buttons</h3>
+
+					<div class="form_row clearfix">
+
+						<div class="form_item checkbox">
+							<label>
+								<input type="hidden" name="checkbox_1" value="unchecked_value">
+								<input type="checkbox" name="checkbox_1" value="checked_value">
+								This is a normal checkbox field
+							</label>
+						</div>
+
+						<div class="form_item checkbox">
+							<label>
+								<input type="hidden" name="checkbox_2" value="unchecked_value">
+								<input type="checkbox" name="checkbox_2" value="checked_value">
+								This is another checkbox
+							</label>
+						</div>
+
+					</div> <!-- .form_row -->
+
+
+
+					<div class="form_row clearfix">
+
+						<div class="form_item radio third">
+							<label><input type="radio" name="radio_input_1" value="value_1" checked> Option 1</label>
+						</div>
+
+						<div class="form_item radio third">
+							<label><input type="radio" name="radio_input_1" value="value_2"> Option 2</label>
+						</div>
+
+						<div class="form_item radio third">
+							<label><input type="radio" name="radio_input_1" value="value_3"> Option 3</label>
+						</div>
+
+					</div> <!-- .form_row -->
+
+				</div> <!-- .form_item_group -->
+
+
+
+				<div class="form_item_group">
+
+					<h3 class="form_group_header">Textareas</h3>
+						
+
+					<div class="form_row clearfix">
+
+						<div class="form_item full">
+							<label>This is supposed to be quite a long label for this textarea</label>
+							<textarea name="notes" class=""></textarea>
+						</div>
+
+					</div> <!-- .form_row -->
+
+				</div> <!-- .form_item_group -->
+
+
+
+				<div class="form_item_group">
+
+					<div class="form_row form_actions clearfix">
+
+						<div class="form_item two_thirds checkbox">
+							<label>
+								<input type="hidden" name="toc_read" value="">
+								<input type="checkbox" name="toc_read" value="yes" class="required"> Terms &amp; Conditions acknowledged
+							</label>
+						</div>
+
+						<img src="img/ajax/indicator.gif" class="ajax_spinner">
+						<button type="submit" class="submit">Send</button>
+
+					</div> <!-- .form_row -->
+
+				</div> <!-- .form_item_group -->
+				
+			</form>
+
+
+
+		</div>
+		<footer>
+
+		</footer>
+	</div> <!--! end of #container -->
+
+	<script src="js/libs/jquery-1.8.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/form_helper.js"></script>
+	<script>
+	$(function(){
+
+		$('#change_form').on('click',function(){
+			$('form').toggleClass('vertical');
+		});
+
+	});
+	</script>
+</body>
+</html>

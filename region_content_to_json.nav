@@ -1,0 +1,87 @@
+<%	
+	# this nav loops through pages of a specific template and collects content from a repeating region
+	# which will then be output as a JSON object
+	# this method can also be used to generate HTML, not just JSON
+
+	all_locations = []
+
+	@top_level_items.each do |nav_item|
+		if nav_item.navigable_type != 'Folder' && nav_item.navigable_object.template.name == 'locations.page'
+
+			region_name = nav_item.page_elements('heading_text', :text)
+			region_array = []
+
+			nav_item.navigable_object.regions.find_by_name('locations').repeats.each do |repeat|
+				# caching elements
+				_els = repeat.elements.inject({}) {|m, el| m[el.name] = el.text; m }
+
+				location = {
+							:name => _els['location_name'],
+							:address => _els['location_address'],
+							:lat => _els['latitude'],
+							:lng => _els['longitude'],
+							:opening_hours => {
+								:mon => _els['opening_mon'],
+								:tue => _els['opening_tue'],
+								:wed => _els['opening_wed'],
+								:thu => _els['opening_thu'],
+								:fri => _els['opening_fri'],
+								:sat => _els['opening_sat'],
+								:sun => _els['opening_sun']
+							},
+							:consultant => {
+								:phone => _els['consultant_phone'],
+								:email => _els['consultant_email']
+							}
+						}
+
+				region_array.push(location)
+
+			end # for each location
+
+			all_locations.push({ region_name => region_array })
+
+		end # if not folder and location template
+	end # top level items
+%>
+
+<script>var LOCATIONS = <%= all_locations.to_json.html_safe %>;</script>
+<!--
+	THE FINAL JSON OBJECT LOOKS LIKE THIS:
+
+	[
+		{
+			"Victoria" : {
+				{
+					"name"    : "Location Name 1",
+					"address" : "123 Street St",
+					"lat"     : "34.1234",
+					"lng"     : "102.3345",
+					...
+				},
+				{
+					"name"    : "Location Name 2",
+					"address" : "123 Street St",
+					"lat"     : "34.1234",
+					"lng"     : "102.3345",
+					...
+				},
+				...
+			}
+		},
+		{
+			"Victoria" : {
+				{
+					"name"    : "Location Name 1",
+					"address" : "123 Street St",
+					"lat"     : "34.1234",
+					"lng"     : "102.3345",
+					...
+				},
+				...
+			}
+		},
+		...
+	]
+
+-->

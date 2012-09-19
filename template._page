@@ -1,0 +1,187 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="TEMPLATE_NAME no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="TEMPLATE_NAME no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="TEMPLATE_NAME no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="TEMPLATE_NAME no-js" lang="en"> <!--<![endif]-->
+<head>
+	<!--
+		REPO_NAME
+		TEMPLATE_NAME
+	-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title><%= title %></title>
+	<meta name="keywords" content="<%=  keywords  %>">
+	<meta name="description" content="<%=  description  %>">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" href="/templates/TEMPLATE_GROUP_NAME/css/style.css">
+	
+	<% if @mode == 'edit' %>
+		<link rel="stylesheet" href="/templates/TEMPLATE_GROUP_NAME/css/blocks.css">
+	<% else %>
+		<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/modernizr-2.6.1.custom.min.js"></script>
+	<% end %>
+</head>
+<body id="page-<%= @page.id %>" <%= 'class="live"' if @mode == 'edit' %>>
+
+	<div id="container">
+		<header>
+			<a href="<%= @page.site.primary_domain %>">LOGO</a>
+		</header>
+
+		<div id="main" role="main">
+			
+
+			<!-- 
+
+				DON'T EVER USER HYPHENS IN REGION NAMES
+				OR PUPPIES WILL DIE
+				
+			 -->
+
+
+			<!-- BREADCRUMBS -->
+			<% @breadcrumbs.each_with_index do |crumb,i| %>
+				<% if i > 0 %>
+					<span>&gt;</span>
+				<% end %>
+				<a href="<%= crumb['url'] %>"><%= crumb['name'] %></a>
+			<% end -%>
+			
+			
+			<!-- NAVIGATION TEMPLATE -->
+			<%= render :navigation => "Main" , :template_name => 'main.nav' %>
+		
+			
+			<!-- LINK REGION -->
+			<%= render :link => "link_region", :text_editable => true, :link_value => "#", :text => "Read More", :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } %>
+			
+
+			<!-- LINK WRAPPED CONTENT -->
+			<% render :link => "link_wrap", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
+				<!-- content -->
+			<% end %>
+			
+
+			<!-- IMAGE REGION -->
+			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
+			
+
+			<!-- MEDIA REGION -->
+			<%= render :media => 'media_region',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
+			<!-- if possible use youtube/vimeo embeds instead for video, Blocks video support is still kind of fragile -->
+
+
+			<!-- SINGLE LINE TEXT REGION -->
+			<%= render :textual => 'single_line_text', :default => 'Proin vel ante a orci tempus', :maxlength => '75' %>
+			
+			
+			<!-- RICH TEXT REGION / TinyMCE -->
+			<%= render :textual => 'tiny_mce_text', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
+			
+			
+			<!-- MULTILINE TEXT REGION (plain text) -->
+			<%= render :textual => 'multi_line_text', :type => :multi, :wysiwyg => false, :default => "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo." %>
+			
+			
+			<!-- REPEATING REGION -->
+			<% render :region => 'repeating_region', :max_repeats => 5 do %>
+				<!-- content -->
+			<% end %>
+			
+
+			<!-- FORM ACTION -->
+			<form method="POST" action="#" class="" accept-charset="utf-8">
+				<div class="form_action" style="display:none;"><%= form_action_url('form_action_name') %></div>
+				<!-- use JavaScript to insert form action to form tag; helps against spam bots -->
+				<!-- 
+					example:
+					// please rewrite nicely this just shows concept
+					$('form').each(function(){
+						$(this).attr('action', $.trim($(this).find('.form_action').text()) );
+					}); 
+				-->
+				<input type="text" name="" value="">
+				<button type="submit">Submit</button>
+			</form>
+
+
+
+
+
+			<!-- SELECT BOX / SET REGION -->
+			<%= render :set => 'led_color', :values => [ [ 'Australia', :Australia ], [ 'Africa', :Africa ] ] %>
+			<!-- This will return a select box with the string being the text shown and values are strings so :Australia = 'Australia' -->
+
+
+
+<!-- NOT READY ==================-->
+
+			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE (! NOT within repeating region)-->
+			<% if @mode == 'edit' %>
+			 	<%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
+			<% end %>
+			<% if @mode == 'edit' ||  @page.page_elements('toggle_visibility_01', :value) == 'ON' %>
+			 <!-- Whatever you want to hide or show according to the ON/OFF setting -->
+			<% end %>
+<!-- not ready ================= < -->
+
+
+
+
+			<!-- HIDE OR SHOW CONTENT BY CLASS ( OK TO USE WITHIN REPEATING REGION ) -->
+			<div class="some classes  <% if @mode == 'edit' %>"><h4 class="ruby_hider_select_note">Please select if you would like the area on or off:</h4><% end %><%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :VISIBILITY_ON ], [ 'OFF', :VISIBILITY_OFF ] ] %><% if @mode != 'edit' %>"><% end %>
+				 <!-- Whatever you want to hide or show according to the VISIBILITY_ON/VISIBILITY_OFF CSS setting -->
+				 <!-- You will need to add CSS to hide or show according to the classes applied, classes:
+				      VISIBILITY_ON
+				      VISIBILITY_OFF
+				      ruby_hider_select_note
+				 -->
+			</div>
+			
+			
+
+
+
+
+
+			<!-- SITE WIDGET -->
+			<%= include_site_widget('widget_name') %>
+			
+			<!-- GLOBAL WIDGET -->
+			<%= include_widget('widget_name') %>
+
+			<!-- INCLUDE FILE -->
+			<!--
+				will include file "mini_cart.inc"
+				file has access to the same instance variables as the template including it
+				like @page, but you cannot pass values to it
+			-->
+			<%= render :region => 'mini_cart' %>
+			
+		</div>
+		<footer>
+			SCT Melbourne &copy; <%= Time.now.year %>
+		</footer>
+	</div> <!--! end of #container -->
+
+	<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/jquery-1.8.1.min.js"></script>
+	<script src="/templates/TEMPLATE_GROUP_NAME/js/plugins.js"></script>
+	<script src="/templates/TEMPLATE_GROUP_NAME/js/script.js"></script>
+
+	<% if @mode == 'edit' %>
+	<!-- 
+		This adds a link to the live url within Blocks edit mode:
+	 -->
+		<div id="page_url_helper">
+			Page url: <a href="<%= @page.url %>" target="_blank"><%= @page.url %></a>
+		</div>
+	<% end %>
+
+</body>
+</html>
