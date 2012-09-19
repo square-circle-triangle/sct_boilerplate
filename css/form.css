@@ -49,6 +49,7 @@
 	width: 100%;
 }
 
+
 .form .form_item.three_quarters {
 	width: 74.5%;
 }
@@ -57,6 +58,7 @@
 	width: 66%;
 }
 
+
 .form .form_item.third {
 	width: 32%;
 }
@@ -64,7 +66,6 @@
 .form .form_item.quarter {
 	width: 23.5%;
 }
-
 
 
 .form label {
@@ -283,6 +284,8 @@
 	.form .form_item.third,
 	.form .form_item.two_thirds,
 	.form .form_item.three_quarters,
+	.form .form_item.third,
+	.form .form_item.two_thirds,
 	.form .form_item + .form_item,
 	.form.vertical .form_item,
 	.form.vertical .form_item.third,
