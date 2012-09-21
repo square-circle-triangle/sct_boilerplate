@@ -159,6 +159,14 @@
 			
 			<!-- GLOBAL WIDGET -->
 			<%= include_widget('widget_name') %>
+
+			<!-- INCLUDE FILE -->
+			<!--
+				will include file "mini_cart.inc"
+				file has access to the same instance variables as the template including it
+				like @page, but you cannot pass values to it
+			-->
+			<%= render :region => 'mini_cart' %>
 			
 		</div>
 		<footer>

@@ -1,0 +1,318 @@
+/* =======================================
+	
+	responsive
+	FORM STYLES
+	v 0.1
+
+======================================= */
+
+#container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.form {
+	background-color: #f5f5f5;
+	padding: 1em;
+}
+
+.form .form_action {
+	display: none;
+}
+
+.form,
+.form * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.form .form_row {
+	/*border: 1px dotted red;*/
+}
+
+.form .form_item {
+	float: left;
+	width: 49%;
+	/*border: 1px solid blue;*/
+	margin-bottom: 1.5em;
+	position: relative;
+}
+
+.form .form_item + .form_item {
+	margin-left: 2%;
+}
+
+.form .form_item.full {
+	float: none;
+	width: 100%;
+}
+
+
+.form .form_item.three_quarters {
+	width: 74.5%;
+}
+
+.form .form_item.two_thirds {
+	width: 66%;
+}
+
+
+.form .form_item.third {
+	width: 32%;
+}
+
+.form .form_item.quarter {
+	width: 23.5%;
+}
+
+
+.form label {
+	display: block;
+	margin: 0 0 .3em 0;
+}
+
+.form input[type=text],
+.form input[type=password],
+.form textarea,
+.form .select_wrap {
+	outline: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	width: 100%;
+	padding: .3em .5em;
+	font-size: 1em;
+	line-height: 1em;
+}
+
+.form textarea {
+	height: 6em;
+	resize: vertical;
+}
+
+.form .form_actions {
+
+}
+
+.form .form_actions .form_item.full {
+	/*width: auto;*/
+}
+
+.form_actions .submit {
+
+}
+
+.form .ajax_spinner {
+	float: right;
+	display: none;
+}
+
+.form .submit {
+	float: right;
+}
+
+.form .form_item_group {
+
+}
+
+.form .form_item_group + .form_item_group {
+	border-top: 1px dotted #000;
+}
+
+.form .form_group_header {
+	font-size: 1.3em;
+	margin: 1em 0;
+}
+
+.form .form_item_group .form_row:first-child {
+	margin-top: 1em;
+}
+
+.form .form_info {
+
+}
+
+.form .form_item .form_info {
+	font-size: .8em;
+}
+
+
+/* error styles */
+
+.form_item.error {
+
+}
+
+.form .error label {
+	color: #c00;
+}
+
+.form .error input[type=text],
+.form .error input[type=password],
+.form .error textarea,
+.form .error .select_wrap {
+	color: #c00;
+	border: 1px solid #c00;
+}
+
+.form .error em {
+	display: block;
+	height: auto;
+	color: #c00;
+	font-size: .8em;
+	line-height: 2em;
+	position: absolute;
+	top: 100%;
+	right: 0;
+}
+
+
+
+/*
+	vertical form
+*/
+
+.form.vertical {
+	width: 75%;
+	margin: 0 auto;
+}
+
+.form.vertical .form_item,
+.form.vertical .form_item.quarter,
+.form.vertical .form_item.three_quarters,
+.form.vertical .form_item.third,
+.form.vertical .form_item.two_thirds,
+.form.vertical .form_item + .form_item {
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 1.75em;
+}
+
+.form.vertical label {
+	float: left;
+	width: 29%;
+	margin-right: 1%;
+}
+
+.form.vertical .checkbox label,
+.form.vertical .radio label {
+	float: none;
+	width: 100%;
+	margin-right: 0%;
+}
+
+.form.vertical input[type=text],
+.form.vertical input[type=password],
+.form.vertical textarea,
+.form.vertical .select_wrap {
+	width: 70%;
+}
+
+
+/* select box replacement */
+.form .select_wrap {
+	position: relative;
+	background-image: url(../img/bg_selectbox.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+	overflow: hidden;
+}
+
+.form .select_wrap span {
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+}
+
+.form .select_wrap select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110%;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	height: 100%;
+	border-radius: 0;
+	border: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.form .checkbox_wrap {
+	display: inline-block;
+	width: 23px;
+	height: 23px;
+	border: 1px solid #CCC;
+	background-color: white;
+	border-radius: 2px;
+	vertical-align: middle;
+	background-image: url(../img/icon_checkbox.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.form .checkbox .checked .checkbox_wrap {
+	background-position: left bottom;
+}
+
+.form .radio .checkbox_wrap {
+	background-position: right top;
+	border-radius: 20px;
+}
+
+.form .radio .checked .checkbox_wrap {
+	background-position: -37px -37px;
+}
+
+.form .checkbox_wrap input {
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+
+
+@media only screen and (max-width: 480px) {
+
+	.form,
+	.form.vertical {
+		width: 100%;
+	}
+
+	.form .form_item,
+	.form .form_item.quarter,
+	.form .form_item.third,
+	.form .form_item.two_thirds,
+	.form .form_item.three_quarters,
+	.form .form_item.third,
+	.form .form_item.two_thirds,
+	.form .form_item + .form_item,
+	.form.vertical .form_item,
+	.form.vertical .form_item.third,
+	.form.vertical .form_item.two_thirds,
+	.form.vertical .form_item + .form_item {
+		width: 100%;
+		margin-left: 0;
+		padding-left: 0%;
+		margin-bottom: 1.5em;
+	}
+
+	.form.vertical label {
+		position: static;
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.form.vertical input[type=text],
+	.form.vertical input[type=password],
+	.form.vertical textarea,
+	.form.vertical .select_wrap {
+		width: 100%;
+	}
+}
+
+/* =======================================
+   end of responsive form styles
+======================================= */
+
