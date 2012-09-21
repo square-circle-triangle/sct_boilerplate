@@ -123,12 +123,12 @@
 <!-- NOT READY ==================-->
 
 			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE (! NOT within repeating region)-->
-			<% if @mode == 'edit' %>
-			 	<%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
-			<% end %>
-			<% if @mode == 'edit' ||  @page.page_elements('toggle_visibility_01', :value) == 'ON' %>
+			<% # if @mode == 'edit' %>
+			 	<%#= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
+			<% #end %>
+			<% #if @mode == 'edit' ||  @page.page_elements('toggle_visibility_01', :value) == 'ON' %>
 			 <!-- Whatever you want to hide or show according to the ON/OFF setting -->
-			<% end %>
+			<% #end %>
 <!-- not ready ================= < -->
 
 
@@ -147,6 +147,10 @@
 			
 
 
+			<!-- BLOCKS PAGE ID SPECIFIC CONTENT -->
+			<% if @page.id == 1234 %>
+			<!-- blocks page specific -->
+			<% end %>
 
 
 
