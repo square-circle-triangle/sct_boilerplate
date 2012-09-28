@@ -1,0 +1,19 @@
+<!-- 
+	WIDGET
+	--
+	can contain any kind of region or static html
+	doesn't have a body or html tag as it's included within another page
+-->
+
+<% if @mode == 'edit' || @mode == 'preview' %>
+	<!-- specify a template this widget will be rendered against in preview mode -->
+	<meta template="/templates/TEMPLATE_GROUP_NAME/some_template_using_this_widget.page" />
+<% end %>
+
+<% if @mode == 'edit' %>
+	<!-- include a template group stylesheet to render widget nicely -->
+	<link rel="stylesheet" href="/templates/TEMPLATE_GROUP_NAME/css/blocks.css">
+<% end %>
+
+
+<!-- your content ... -->
