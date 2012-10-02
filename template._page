@@ -59,38 +59,38 @@
 		
 			
 			<!-- LINK REGION -->
-			<%= render :link => "link_region", :text_editable => true, :link_value => "#", :text => "Read More", :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } %>
+			<%= render :link => "link_region_unique_name", :text_editable => true, :link_value => "#", :text => "Read More", :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } %>
 			
 
 			<!-- LINK WRAPPED CONTENT -->
-			<% render :link => "link_wrap", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
+			<% render :link => "link_wrap_unique_name", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
 				<!-- content -->
 			<% end %>
 			
 
 			<!-- IMAGE REGION -->
-			<%= render :image => 'image_region', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
+			<%= render :image => 'image_region_unique_name', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
 			
 
 			<!-- MEDIA REGION -->
-			<%= render :media => 'media_region',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
+			<%= render :media => 'media_region_unique_name',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
 			<!-- if possible use youtube/vimeo embeds instead for video, Blocks video support is still kind of fragile -->
 
 
 			<!-- SINGLE LINE TEXT REGION -->
-			<%= render :textual => 'single_line_text', :default => 'Proin vel ante a orci tempus', :maxlength => '75' %>
+			<%= render :textual => 'single_line_text_unique_name', :default => 'Proin vel ante a orci tempus', :maxlength => '75' %>
 			
 			
 			<!-- RICH TEXT REGION / TinyMCE -->
-			<%= render :textual => 'tiny_mce_text', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
+			<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
 			
 			
 			<!-- MULTILINE TEXT REGION (plain text) -->
-			<%= render :textual => 'multi_line_text', :type => :multi, :wysiwyg => false, :default => "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo." %>
+			<%= render :textual => 'multi_line_text_unique_name', :type => :multi, :wysiwyg => false, :default => "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo." %>
 			
 			
 			<!-- REPEATING REGION -->
-			<% render :region => 'repeating_region', :max_repeats => 5 do %>
+			<% render :region => 'repeating_region_unique_name', :max_repeats => 5 do %>
 				<!-- content -->
 			<% end %>
 			
@@ -115,7 +115,7 @@
 
 
 			<!-- SELECT BOX / SET REGION -->
-			<%= render :set => 'led_color', :values => [ [ 'Australia', :Australia ], [ 'Africa', :Africa ] ] %>
+			<%= render :set => 'set_unique_name', :values => [ [ 'Australia', :Australia ], [ 'Africa', :Africa ] ] %>
 			<!-- This will return a select box with the string being the text shown and values are strings so :Australia = 'Australia' -->
 
 
