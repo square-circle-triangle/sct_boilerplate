@@ -97,14 +97,18 @@
 
 			<!-- FORM ACTION -->
 			<form method="POST" action="#" class="" accept-charset="utf-8">
+				<%
+					# if you want to re-use a form template more than once
+					# make the form action a unique name using the page id
+					# instead of a simple string
+
+					# example:
+
+					# form_action_name = "form_action_for_page_id_#{@page.id}" 
+				%>
 				<div class="form_action" style="display:none;"><%= form_action_url('form_action_name') %></div>
-				<!-- use JavaScript to insert form action to form tag; helps against spam bots -->
 				<!-- 
-					example:
-					// please rewrite nicely this just shows concept
-					$('form').each(function(){
-						$(this).attr('action', $.trim($(this).find('.form_action').text()) );
-					}); 
+					check out form.html & js/form_helper.hs for some best practices, validation and helpers
 				-->
 				<input type="text" name="" value="">
 				<button type="submit">Submit</button>
