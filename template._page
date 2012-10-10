@@ -36,6 +36,14 @@
 
 		<div id="main" role="main">
 			
+			<!-- HELP & HINTS for users -->
+			<% if @mode == 'edit' %>
+				<div class="blocks_help">
+					Leave a helpful comment for the user if you do something tricky on the template.
+					Wrappend in the conditionals, it'll only show up in edit mode.
+				</div>
+			<% end %>
+
 
 			<!-- 
 

@@ -50,6 +50,17 @@ body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper di
 	        box-sizing: content-box;
 }
 
+.blocks_help {
+	display: block;
+	padding: 10px;
+	margin: 10px 0 10px 0;
+	color: white;
+	background-color: #39C;
+	border: 2px solid #1E6081;
+	border-radius: 5px;
+	font-size: 14px;
+	width: 80%;
+}
 
 
 /* shows page url bottom right in edit mode */
