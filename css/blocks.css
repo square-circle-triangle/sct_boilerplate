@@ -43,6 +43,14 @@ body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper di
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-height { }
 body.blocks div#blocks-wrapper div#inner-blocks-wrapper .image-region-wrapper div.blocks-element .max-height:after { content: 'px'; }
 
+.repeatable-container-tools,
+.repeatable-area-tools {
+	-webkit-box-sizing: content-box;
+	   -moz-box-sizing: content-box;
+	        box-sizing: content-box;
+}
+
+
 
 /* shows page url bottom right in edit mode */
 #page_url_helper {
