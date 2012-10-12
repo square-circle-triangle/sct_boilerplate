@@ -13,6 +13,7 @@
 		res
 	end
 
+
 	# is this the current_page_item?
 	def is_current?(nav_item)
 		( !@current_page_item.blank? && nav_item == @current_page_item ) ? true : false
@@ -20,10 +21,14 @@
 
 
 	# build nav structure recursively
-	def nav_level(items,level,max_level)
-		res = "<ul class=\"l#{level}\">"
+	def nav_level(options={})
+		opts = {
+			:level => 1
+		}.merge(options)
 
-		items.each do |nav_item|
+		res = "<ul class=\"l#{opts[:level]}\">"
+
+		opts[:items].each do |nav_item|
 
 			active_class   = is_active?(nav_item) ? 'active' : ''
 			current_class  = is_current?(nav_item) ? 'current' : ''
@@ -37,8 +42,8 @@
 
 				# call function again if this has children
 				# and not at max nav level yet
-				if !nav_item.children.empty? && level < max_level
-					res << nav_level(nav_item.children,level+1,max_level)
+				if !nav_item.children.empty? && opts[:level] < opts[:max_level]
+					res << nav_level(:items => nav_item.children, :level => opts[:level]+1, :max_level => opts[:max_level])
 				end
 			res << "</li>"
 		end
@@ -48,4 +53,5 @@
 	end
 
 %>
-<%= nav_level(@top_level_items,1,3) %>
+
+<%= nav_level(:items => @top_level_items, :max_level => 3) %>
