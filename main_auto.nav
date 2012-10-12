@@ -1,0 +1,51 @@
+<%
+	
+	# check if item is ancestor of current_page_item
+	def is_active?(nav_item)
+		res = false
+		current_page = @current_page_item
+
+		while !current_page.blank? && res == false
+			res = true if current_page == nav_item
+			current_page = current_page.parent
+		end
+
+		res
+	end
+
+	# is this the current_page_item?
+	def is_current?(nav_item)
+		( !@current_page_item.blank? && nav_item == @current_page_item ) ? true : false
+	end
+
+
+	# build nav structure recursively
+	def nav_level(items,level,max_level)
+		res = "<ul class=\"l#{level}\">"
+
+		items.each do |nav_item|
+
+			active_class   = is_active?(nav_item) ? 'active' : ''
+			current_class  = is_current?(nav_item) ? 'current' : ''
+			children_class = !nav_item.children.empty? ? 'has_children' : ''
+			is_folder      = nav_item.navigable_type == 'Folder' ? true : false
+			folder_class   = is_folder ? 'folder' : ''
+			link_url       = is_folder ? '#' : nav_item.url
+
+			res << "<li class=\"#{active_class} #{children_class}\">"
+				res << "<a href=\"#{link_url}\" class=\"#{current_class} #{folder_class}\">#{nav_item.name}</a>"
+
+				# call function again if this has children
+				# and not at max nav level yet
+				if !nav_item.children.empty? && level < max_level
+					res << nav_level(nav_item.children,level+1,max_level)
+				end
+			res << "</li>"
+		end
+		
+		res << "</ul>"
+		res.html_safe
+	end
+
+%>
+<%= nav_level(@top_level_items,1,3) %>
