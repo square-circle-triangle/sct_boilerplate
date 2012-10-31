@@ -4,10 +4,6 @@
 <!--[if IE 8]>    <html class="TEMPLATE_NAME no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="TEMPLATE_NAME no-js" lang="en"> <!--<![endif]-->
 <head>
-	<!--
-		REPO_NAME
-		TEMPLATE_NAME
-	-->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -27,6 +23,10 @@
 		<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/modernizr-2.6.1.custom.min.js"></script>
 	<% end %>
 </head>
+<!--
+	REPO_NAME
+	TEMPLATE_NAME
+-->
 <body id="page-<%= @page.id %>" <%= 'class="live"' if @mode == 'edit' %>>
 
 	<div id="container">

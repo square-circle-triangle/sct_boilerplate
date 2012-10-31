@@ -21,6 +21,10 @@
 		<script src="/templates/TEMPLATE_GROUP_NAME/js/modernizr-2.6.1.custom.min.js"></script>
 	<% end %>
 </head>
+<!--
+	REPO_NAME
+	TEMPLATE_NAME
+-->
 <body>
 
 	<div id="container">
