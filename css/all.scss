@@ -1,0 +1,13 @@
+/*
+	SCSS file for HOMBRE (see hombre_sas._page)
+	
+	you can write normal CSS syntax here or make use of SCSS
+	http://sass-lang.com/
+
+	use the asset-url() helper when referencing images
+	path is from template group root
+*/
+
+.something_with_a_background_image {
+  background-image: asset-url('img/image.png');
+}
