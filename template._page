@@ -62,46 +62,94 @@
 			<% end -%>
 			
 			
+
 			<!-- NAVIGATION TEMPLATE -->
+			<!--
+				A navigation template loops through navigation sets (managed in Blocks) to create a navigation element.
+				You tell it which navigation set (here "Main") and what template ("main.nav") to use.
+			-->
 			<%= render :navigation => "Main" , :template_name => 'main.nav' %>
 		
+
+
+			<!--
+				
+				BLOCKS REGIONS
+				
+				Regions are content editable elements. There are multiple kinds like links, images, text elements, ...
+
+			-->
+
 			
 			<!-- LINK REGION -->
+			<!-- this is just a simple text link element -->
 			<%= render :link => "link_region_unique_name", :text_editable => true, :link_value => "#", :text => "Read More", :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } %>
 			
 
+
 			<!-- LINK WRAPPED CONTENT -->
+			<!-- you can wrap any other region into a link wrap, i.e. make a linked image -->
 			<% render :link => "link_wrap_unique_name", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
 				<!-- content -->
 			<% end %>
 			
 
+
 			<!-- IMAGE REGION -->
-			<%= render :image => 'image_region_unique_name', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => "200", :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
+			<!-- 
+				for :width and :height you can use either a fixed value like "200" or a range like 100..200
+				this will allow the user to crop a dynamically sized image
+			-->
+			<%= render :image => 'image_region_unique_name', :default => "http://placehold.it/200x200/666/fff&text=Size:+200x200", :width => 100..200, :height => "200", :html => { :style => "font-size:1.2em;", :class => "photo" } %>
 			
+
 
 			<!-- MEDIA REGION -->
 			<%= render :media => 'media_region_unique_name',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
 			<!-- if possible use youtube/vimeo embeds instead for video, Blocks video support is still kind of fragile -->
 
 
+
 			<!-- SINGLE LINE TEXT REGION -->
+			<!-- usually used for headings, Blocks will give the user a text input field -->
 			<%= render :textual => 'single_line_text_unique_name', :default => 'Proin vel ante a orci tempus', :maxlength => '75' %>
 			
+
 			
 			<!-- RICH TEXT REGION / TinyMCE -->
+			<!--
+				this will give the user a tinyMCE rich text editor, so they can choose styling and headings
+				be aware that they can pick heading from h1 to h6
+				best to wrap a tinyMCE area with a div which has a class like "user_editable_text" and
+				use inherited styling:
+				.user_editable_text h1 { ... }
+				.user_editable_text h2 { ... }
+				.user_editable_text ul { ... }
+				...
+			-->
 			<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
 			
 			
+
 			<!-- MULTILINE TEXT REGION (plain text) -->
+			<!--
+				this will render as a plain textarea in edit mode
+				everything that is put in
+			-->
 			<%= render :textual => 'multi_line_text_unique_name', :type => :multi, :wysiwyg => false, :default => "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo." %>
 			
 			
+
 			<!-- REPEATING REGION -->
-			<% render :region => 'repeating_region_unique_name', :max_repeats => 5 do %>
+			<!-- 
+				:elective => true will allow the user to turn off the repeating region completely
+				you can set repeats to 1 and elective to true to a have togglable element
+			-->
+			<% render :region => 'repeating_region_unique_name', :max_repeats => 5, :elective => true do %>
 				<!-- content -->
 			<% end %>
 			
+
 
 			<!-- FORM ACTION -->
 			<form method="POST" action="#" class="" accept-charset="utf-8">
@@ -160,6 +208,12 @@
 
 
 			<!-- BLOCKS PAGE ID SPECIFIC CONTENT -->
+			<!-- 
+				this can be used to include a conversion tag on just a single instance of a template
+				you can find out a page's ID by going to the page in Blocks and look at the URL:
+					http://example-slice.blockshome.com/sites/44/pages/291
+				it would be 291 in this case, whereas the site ID is 44
+			-->
 			<% if @page.id == 1234 %>
 			<!-- blocks page specific -->
 			<% end %>
