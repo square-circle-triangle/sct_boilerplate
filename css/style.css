@@ -166,8 +166,64 @@ form label.error {
 }
 
 
+/* -----------------------
+tinyMCE region
+----------------------- */
 
+.editable_text {
 
+}
+
+.editable_text h1,
+.editable_text h2,
+.editable_text h3,
+.editable_text h4,
+.editable_text h5,
+.editable_text h6 {
+
+}
+
+.editable_text h1 {
+
+}
+
+.editable_text h2 {
+
+}
+
+.editable_text h3 {
+
+}
+
+.editable_text h4 {
+
+}
+
+.editable_text h5 {
+
+}
+
+.editable_text h6 {
+
+}
+
+.editable_text p {
+
+}
+
+.editable_text ul {
+
+}
+
+.editable_text li {
+
+}
+
+.editable_text a {
+
+}
+
+/* end tinyMCE area */
 
 
 

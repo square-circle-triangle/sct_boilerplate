@@ -127,7 +127,10 @@
 				.user_editable_text ul { ... }
 				...
 			-->
-			<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
+			<div class="editable_text">
+				<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
+			</div>
+			
 			
 			
 
@@ -180,7 +183,7 @@
 
 
 
-<!-- NOT READY ==================-->
+			<!-- NOT READY ==================-->
 
 			<!-- HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE (! NOT within repeating region)-->
 			<% # if @mode == 'edit' %>
@@ -189,7 +192,8 @@
 			<% #if @mode == 'edit' ||  @page.page_elements('toggle_visibility_01', :value) == 'ON' %>
 			 <!-- Whatever you want to hide or show according to the ON/OFF setting -->
 			<% #end %>
-<!-- not ready ================= < -->
+
+			<!-- not ready ================= < -->
 
 
 
