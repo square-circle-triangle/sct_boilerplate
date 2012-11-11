@@ -23,7 +23,7 @@
 		<%= include_css 'css/blocks.scss' %>
 	<% else %>
 		<!-- HOMBRE JS INCLUDE -->
-		<%= include_js 'js/libs/modernizr-2.6.1.custom.min.js' %>
+		<%= include_js 'js/libs/modernizr-2.6.2.custom.min.js' %>
 	<% end %>
 </head>
 <!--

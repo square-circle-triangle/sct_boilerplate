@@ -20,7 +20,7 @@
 	<% if @mode == 'edit' %>
 		<link rel="stylesheet" href="/templates/TEMPLATE_GROUP_NAME/css/blocks.css">
 	<% else %>
-		<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/modernizr-2.6.1.custom.min.js"></script>
+		<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/modernizr-2.6.2.custom.min.js"></script>
 	<% end %>
 </head>
 <!--
