@@ -1,28 +1,24 @@
 $(function(){
 
 	// DOM ready, start JS
-	Page.init();
+	Site.init();
 
 });
 
 
 
 // -------------------------- //
-// MAIN FUNCTION
+// SITE
 // -------------------------- //
 
-var Page = (function(){
-	
-	// MAIN FUNCTION
-	// manage different helper functions here
-	// like galleries, form validations, ...
+var Site = (function(){
 
 	var _self = {};
 	
 
 	function init(){
-		// init other functions here
-		Page.Example.init();
+		Site.Pages.init();
+		Site.Helper.init();
 	}
 	
 
@@ -36,10 +32,109 @@ var Page = (function(){
 
 
 // -------------------------- //
-// SUB FUNCTION
+// PAGES
 // -------------------------- //
 
-Page.Example = (function(){
+Site.Pages = (function(){
+	
+	var _self = {};
+	
+
+	function init(){
+		Site.Pages.TemplateName.init();
+	}
+
+
+	_self = {
+		init    : init,
+		doStuff : doStuff
+	};
+	
+	return _self;
+	
+})();
+
+
+
+// -------------------------- //
+// PAGE SPECIFIC STUFF
+// -------------------------- //
+
+Site.Pages.TemplateName = (function(){
+	
+	var _self = {},
+		_div;
+	
+
+	function init(){
+		if( $('html').hasClass('template_name') ){
+			_div = $('#this_div');
+			bindEvents();
+		}
+	}
+
+
+	function bindEvents(){
+		_div.on('click', 'button', function(e){
+			e.preventDefault();
+			doStuff();
+		});
+	}
+
+
+	_self = {
+		init    : init
+	};
+	
+	return _self;
+	
+})();
+
+
+
+
+// -------------------------- //
+// HELPER
+// -------------------------- //
+
+Site.Helper = (function(){
+	
+	var _self = {},
+		_div;
+	
+
+	function init(){
+		_div = $('#this_div');
+		bindEvents();
+	}
+
+
+	function doStuff(){
+
+	}
+	
+
+	_self = {
+		init    : init
+	};
+	
+	return _self;
+	
+})();
+
+
+
+
+
+
+
+
+
+// -------------------------- //
+// Dummy
+// -------------------------- //
+
+Dummy = (function(){
 	
 	var _self = {},
 		_div;
