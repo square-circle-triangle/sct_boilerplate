@@ -57,7 +57,7 @@ Site.Pages = (function(){
 
 
 // -------------------------- //
-// PAGE SPECIFIC STUFF
+// PAGE :: TEMPLATE NAME
 // -------------------------- //
 
 Site.Pages.TemplateName = (function(){
