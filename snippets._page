@@ -128,6 +128,25 @@
 				<% end %>
 			<% end %>
 
+			<% if @mode == 'edit' %>
+				<% render :region => 'gallery_item', :max_repeats => 12 do %>
+					<%= render :image => 'main_img',  :default => "http://placehold.it/800x600", :width => 600..1000, :height => 100..10000 %>
+					<%= render :textual => 'gallery_text', :default => "Caption Text Goes Here", :type => :multi,  :wysiwyg => false %>
+				<% end %>
+			<% end %>
+
+			<% if @mode != 'edit' %>
+				<!--
+					loop through repeats, get thumbnail size image to link to full size
+					for use with fancybox
+				-->
+				<% @page.regions.detect { |r| r.name == 'gallery_item' }.repeats.each_with_index do |gallery_repeat, i| %>
+					<a href="<%= gallery_repeat.elements.detect {|e| e.name == 'main_img' }.asset.try(:external_url) %>" class="fancybox" rel="gallery" title="<%= gallery_repeat.elements.detect {|e| e.name == 'gallery_text' }.text() %>">
+						<img src="<%= gallery_repeat.elements.detect {|e| e.name == 'main_img' }.asset.try(:preview_thumb_path) %>">
+					</a>
+				<% end %>
+			<% end %>
+
 			
 		</div>
 		<footer>
