@@ -108,7 +108,17 @@ var FormHelper = (function(){
 			errorElement: "em",
 			
 			submitHandler: function(){
-				alert('Form validates. Do ajaxy stuff or remove the "submitHander" option from the validate plugin!');
+				var $form = $(form); // create form jQuery object
+				
+				if( $form.hasClass('sending') ){
+					// form is sending already
+					// don't do anything
+					return false;
+				}
+				else {
+					$form.addClass('sending'); // adding class so it won't be submitted twice
+					form.submit(); // triggering normal form submit OR do ajax OR ....
+				}
 			},
 
 			//Adds "error" class to input label
