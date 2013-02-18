@@ -101,6 +101,10 @@
 			<%= render :media => 'media_region_unique_name',  :default => "http://placehold.it/400x200", :width => "400", :height => "200" %>
 			<!-- if possible use youtube/vimeo embeds instead for video, Blocks video support is still kind of fragile -->
 
+			<%= render :media => 'single_video',  :default => "http://placehold.it/400x200", :width => 1..1280, :height => 1..720, :videojs => false %>
+			<!-- :videojs is true by default but if you include the false parameter it will be excluded (for this instance, other instances may include it) -->
+
+			
 
 
 			<!-- SINGLE LINE TEXT REGION -->
@@ -143,6 +147,15 @@
 			-->
 			<% render :region => 'repeating_region_unique_name', :max_repeats => 5, :elective => true do %>
 				<!-- content -->
+			<% end %>
+
+
+
+			<!-- HIDE REGION IF NO VALUE IN LINK URL -->
+			<% if @page.elements.detect{ |e| e.name == 'link_field' }.try(:link_value) != '' || @mode == 'edit' %>
+				<p>Some content to render:
+					<%= render :link => "link_field", :text_editable => true, :link_value => "", :text => "some text" %>
+				</p>
 			<% end %>
 			
 
