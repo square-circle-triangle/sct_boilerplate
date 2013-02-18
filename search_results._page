@@ -76,7 +76,7 @@
 		</footer>
 	</div> <!--! end of #container -->
 
-	<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/jquery-1.8.3.min.js"></script>
+	<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/jquery-1.9.1.min.js"></script>
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/plugins.js"></script>
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/script.js"></script>
 
