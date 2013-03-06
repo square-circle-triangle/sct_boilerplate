@@ -1,0 +1,95 @@
+<%
+
+	# v0.1
+	# ALL CODE STILL NEEDS TO BE CONFIRMED
+
+
+
+
+
+	
+
+	# Example of how to include region content from a page into a navigation template
+
+
+	@top_level_items.each_with_index do |nav_item,i|
+	
+		# skip this if item is a folder
+		next if nav_item.navigable_type != 'Folder'
+		
+		# making sure this item is using the right template
+		# so we know which regions to pick from
+		next unless nav_item.navigable_object.template.name == 'text_template.page'
+
+
+		# Text region (single/multi line or tinyMCE)
+		%>
+			<%= nav_item.page_elements('region_name', :text) %>
+		<%
+
+
+
+		# images, different approaches
+
+		%>
+			<%
+				image_url = nav_item.page_elements('item_image', :asset).try(:relative_url) || 'http://placehold.it/400x400'
+			%>
+			<img src="<%= image_url %>">
+		<%
+
+		%>
+			<%
+				if nav_item.page_elements('item_image').try(:asset)
+				
+					image_asset = nav_item.page_elements('item_image').asset
+			%>
+				<img src="<%= image_asset.url(:web) %>" width="<%= image_asset.width %>" height="<%= image_asset.height %>">
+			<% else %>
+				<img src="http://placehold.it/400x400" width="400" height="400">
+			<% end %>
+		<%
+
+
+		
+		# get a select value
+
+		%>
+			<%= nav_item.page_elements('classification', :selected)  %>
+		<%
+
+
+
+		# link region
+
+		%>
+			<%= nav_item.page_elements('pdf_url', :original_production_url)  %>
+			<%= nav_item.page_elements('pdf_url', :production_link)  %>
+		<%
+
+
+
+		# repeating regions
+
+		# nav_item.navigable_object.regions.find_by_name('accessory_repeating_region').elected
+		%>
+			<% nav_item.navigable_object.regions.find_by_name('accessory_repeating_region').repeats.each do |repeat_item| %>
+
+				<%= repeat_item.elements.find_by_name('accessory_heading').text %>
+
+				<% if repeat_item.elements.find_by_name('accessory_image').try(:asset) %>
+					<img src="<%= repeat_item.elements.find_by_name('accessory_image').asset.url(:web) %>" width="256" height="180">
+				<% else %>
+					<img src="" width="256" height="180">
+				<% end %>
+			<% end %>
+		<%
+
+
+		
+
+	end # end of top level loop
+
+
+%>
+
