@@ -46,8 +46,7 @@ Site.Pages = (function(){
 
 
 	_self = {
-		init    : init,
-		doStuff : doStuff
+		init    : init
 	};
 	
 	return _self;
@@ -109,7 +108,7 @@ Site.Helper = (function(){
 	}
 
 
-	function doStuff(){
+	function bindEvents(){
 
 	}
 	

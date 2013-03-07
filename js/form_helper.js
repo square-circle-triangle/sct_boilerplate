@@ -52,14 +52,16 @@ var FormHelper = (function(){
 
 		// set placeholder to value
 		var _inputs = _forms.find('input[data-placeholder]');
+
 		_inputs.each(function(){
-			var _this = $(this),
+			var _this        = $(this),
 				_placeholder = _this.data('placeholder');
+
 			if( typeof _placeholder === 'string' ){
-				_this.val()
+				_this.val(_placeholder);
 			}
-			
 		});
+
 		// bind events
 		_forms.on('focus','input[type=text]',function(){
 
