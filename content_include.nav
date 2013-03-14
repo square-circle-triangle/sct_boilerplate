@@ -85,6 +85,16 @@
 			<% end %>
 		<%
 
+		# getting dates of items to emulate a blog
+
+		# updated_at = the time the page was last updated (saved)
+		# created_at = the time the page was actually created (probably what you want for a blog)
+		# last_published_at = the time the page was last published
+
+		nav_item.updated_at.day = day_item_was_updated
+		Date::MONTHNAMES[nav_item.created_at.month] = month_name_item_was_created
+		nav_item.last_published_at.year = year_item_was_last_published
+
 
 		
 
