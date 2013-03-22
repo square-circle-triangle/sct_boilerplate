@@ -45,6 +45,16 @@
 
 			-->
 
+			<!-- Debugging -->
+
+			<!-- Useful for seeing what methods objects respond to -->
+			
+			<%%= (@search.methods - Object.instance_methods).sort %>
+			<%%= (@results.methods - Object.instance_methods).sort %>
+			
+			<%%= p @search %>
+			<%%= p @results %>
+
 
 			<!-- HELP & HINTS for users -->
 			<% if @mode == 'edit' %>
