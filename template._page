@@ -82,7 +82,7 @@
 
 			<!-- LINK WRAPPED CONTENT -->
 			<!-- you can wrap any other region into a link wrap, i.e. make a linked image -->
-			<% render :link => "link_wrap_unique_name", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
+			<%= render :link => "link_wrap_unique_name", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %>
 				<!-- content -->
 			<% end %>
 			
@@ -145,7 +145,7 @@
 				:elective => true will allow the user to turn off the repeating region completely
 				you can set repeats to 1 and elective to true to a have togglable element
 			-->
-			<% render :region => 'repeating_region_unique_name', :max_repeats => 5, :elective => true do %>
+			<%= render :region => 'repeating_region_unique_name', :max_repeats => 5, :elective => true do %>
 				<!-- content -->
 			<% end %>
 

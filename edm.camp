@@ -1,0 +1,87 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!--
+		SLICE
+		edm.camp
+	-->
+		<style>
+			a.footer_a_link:hover,
+			a.footer_a_link:hover span
+			{
+				text-decoration: underline !important;
+			}
+		</style>
+	</head>
+	<body style="margin:0;padding:0;background:#f9f5ec;background-color:#f9f5ec;" class="blocks preview">
+		
+		<!-- TABLE 1 -->
+		<table width="100%" cellspacing="0" cellpadding="0" style="font-family:sans-serif,arial; font-size:14px; line-height:1.3em;background-color:#f7f7f7;" bgcolor="#F7F7F7" align="center">
+			<tbody>
+				<tr>
+					<td width="100%" style="background:#f9f5ec;background-color:#f9f5ec;">
+
+						<!-- TABLE 2 (splits main section and footer)-->
+						<table width="100%" cellspacing="0" cellpadding="0" style="font-family:sans-serif,arial; font-size:14px; line-height:1.3em;" align="center">
+							<tbody>
+								<!-- TOP SECTION TABLE ROW -->
+								<tr>
+									<td width="100%" style="text-align:center" align="center">
+									
+
+										<!-- TABLE 3 ( visually; main column )-->
+										<table width="620" cellspacing="0" cellpadding="0" style="font-family:sans-serif,arial; font-size:14px; line-height:1.3em;text-align:center" align="center">
+											<tbody>
+												<tr>
+													<td width="620" height="40" style="background:transparent;background-color:transparent;text-align:center;width:620px;">
+														<img alt="image" src="http://mab.blockshome.com/templates/mab_website/img/edm/head.jpg" width="620" height="40"/>
+													</td>
+												</tr>
+												<tr>
+													<td width="620" height="auto" style="border:1px solid #e2ded6;border-bottom:none;background:white;background-color:white;text-align:center;" align="center">
+														
+														<!-- USE NORMAL FORM-ACTION FIELD NAMES TO PERSONALISE EMAILS WITH {{}} -->
+														<p style="font-size:16px;font-weight:600;">{{first_name}},</p>
+
+														<% render :region => 'repeating_region_main_copy', :max_repeats => 10, :elective => false do %>
+															<p style="font-size:14px;line-height:1.4;"><%= render :textual => 'single_paragraph_', :type => :multi, :wysiwyg => false, :default => "As promised you have the first opportunity to view and purchase a new home at MAB’s highly anticipated residential release at NewQuay prior to public release." %></p>
+														<% end %>
+
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<!-- END TABLE 3 -->
+
+
+
+
+									
+									</td>
+								</tr>
+								<!-- END TOP SECTION TABLE ROW -->
+
+								<!-- FOOTER TABLE ROW -->
+								<tr>
+									<td width="100%" height="81" align="center" style="border-top:1 px solid #e2ded6;background:#f1efee;background-color:#f1efee;background-image:url(edm_footer_bg.jpg);text-align:center;font-size:11px;cursor:default;">
+										<p style="line-height:9px;mso-line-height-rule:exactly;"><a class="footer_a_link" href="http://newquayPromenade.com.au" style="color:#000001;text-decoration:none;"><span style="color:#000001;text-decoration:none;">NewQuayPromenade.com.au</span></a> <span style="font-size:13px;font-weight:200;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>  If you cannot see this email properly, <a class="footer_a_link" href="http://mab.blockshome.com/recipients/<%= recipient_unique_id %>/show_campaign" style="color:#000001;text-decoration:none;"><span style="font-weight:color:#000001;text-decoration:underline;">view in browser</span></a>.</p>
+										<p style="line-height:9px;mso-line-height-rule:exactly;"><a class="footer_a_link" href="<%= forward_url %>" style="color:#000001;text-decoration:none;"><span style="color:#000001;text-decoration:none;">Forward to a friend</span></a>  <span style="font-size:13px;font-weight:200;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>  <a class="footer_a_link" href="<%= unsubscribe_url %>" style="color:#000001;text-decoration:none;"><span style="color:#000001;text-decoration:none;">Unsubscribe from emails</span></a>  <span style="font-size:13px;font-weight:200;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>  <a class="footer_a_link" href="http://www.blocksglobal.com" style="color:#000001;text-decoration:none;"><span style="color:#000001;text-decoration:none;">Powered by BlocksGlobal</span></a>  <span style="font-size:13px;font-weight:200;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>  <a class="footer_a_link" href="http://www.sct.com.au" style="color:#000001;text-decoration:none;"><span style="color:#000001;text-decoration:none;">Website by SCT</span></a></p>
+									</td>
+								</tr>
+								<!-- END FOOTER TABLE ROW -->
+							</tbody>
+						</table>
+						<!-- END TABLE 2 -->
+					
+					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- END TABLE 1 -->
+</html>

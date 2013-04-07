@@ -11,6 +11,7 @@
 			<% else %>
 				<a href="<%= nav_item.url %>" class="<%= current_class %>"><%= nav_item.name %></a>
 			<% end %>
+
 			
 			<% unless nav_item.children.empty? %>
 				<ul class="secondary_lvl_menu">
@@ -49,3 +50,20 @@
 		</li>
 	<% end # of top lvl menu %>
 </ul>
+
+
+
+
+			<!-- targetSet = ''
+				if nav_item.navigable_type == 'ExternalLink'
+					if nav_item.navigable_object.new_window
+						targetSet = ' target="_blank"'
+					end
+				end
+			%>
+			<li><a href="<%= nav_item_url %>"<%= targetSet.html_safe %>><%= nav_item.name %></a></li> -->
+
+
+
+
+			
