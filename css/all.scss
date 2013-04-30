@@ -4,10 +4,10 @@
 	you can write normal CSS syntax here or make use of SCSS
 	http://sass-lang.com/
 
-	use the asset-url() helper when referencing images
+	use the hombre_url() helper when referencing images or fonts
 	path is from template group root
 */
 
 .something_with_a_background_image {
-  background-image: asset-url('img/image.png');
+  background-image: hombre_url('img/image.png');
 }
