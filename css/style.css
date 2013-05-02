@@ -68,7 +68,7 @@ td { vertical-align: top; }
 	
 	-----------------------------------------------------------------------
 	
-	UNDERSCORES NOT DASHES
+	UNDERSCORES NOT DASHES - SNAKE CASE FOR NAMES
 	
 	Please use underscores as separators, not dashes. Words with underscores can
 	be selected with a double click, words with dashes can't.
@@ -82,7 +82,7 @@ td { vertical-align: top; }
 	
 	NO CAMEL CASE OR UPPER CASE
 	
-	As a matter of convention we don't use camel case or upper case  in names.
+	As a matter of convention we don't use camel case or upper case in names.
 	
 	YES:
 		.this_is_a_proper_classname {}
@@ -126,21 +126,122 @@ td { vertical-align: top; }
 			#containter .content {}
 				#container .content p {}
 				
+	
 	-----------------------------------------------------------------------
 
-	ONE PROPERTY PER LINE
+	ONE SELECTOR/ATTRIBUTE PER LINE
 
-	For readability and ease of editing, keep css rules on individual lines.  
-	Blocks will soon minify stylesheets, ensuring this method does not increase load time.
+	For readability and ease of editing, keep css selectors and rules on
+	individual lines.  
+	
 
 	YES:
-		#container {
+		#container h1,
+		#container h2,
+		#container h3 {
 			display: block;
 			height: 0px;
 			overflow: hidden;
 		}
 	NO:
-		#container { display: block; height: 0px; overflow: hidden; }
+		#container h1, #container h2, #container h3 { display: block; height: 0px; overflow: hidden; }
+
+
+	-----------------------------------------------------------------------
+
+	NO CSS SHORTHANDS FOR COMPLEX ATTRIBUTES
+
+	Please don't use CSS shorthands for complex attributes like font, background
+	or transition. This helps make your code more readable, in GIT commit it
+	is easier to see what has changed and you avoid certain problems with CSS
+	inheritance.
+
+	YES:
+		font: 'Proxima Nova', sans-serif;
+		font-weight: 100;
+		font-size: 12px;
+		line-height: 1.5em;
+		font-style: italic;
+	
+	NO:
+		font: 100 italic 12px/1.5em 'Proxima Nova', sans-serif;
+
+
+	-----------------------------------------------------------------------
+
+	USE CLASSES FOR EVERYTHING
+
+	We see it as a best practice to use classes instead of tags for CSS rules
+	as this has a couple advantages:
+		
+		- it is clearer to what kind of element you are applying the rule
+		  and it won't have unexpected consequences if someone adds another
+		  element with the same tag name:;
+			YES : .gallery .gallery_items {}
+			NO  : .gallery div {}
+		
+		- styling becomes independent from the tag and reusable:
+			YES :
+			.large_heading {}
+				h1.large_heading and div.large_heading will look the same but
+				have different semantical context
+			NO :
+				h1 {}
+				Now you will have to have an h1 to achieve the style
+	
+	
+	-----------------------------------------------------------------------
+
+	AND WHAT ABOUT IDs?
+
+	There is almost no reason to use an ID over a class - at least when you
+	think CSS. Using a class makes your code easily re-usable again, you
+	might not think that the element you are working on will be repeated,
+	but it might just will at some point later on.
+
+	When IDs are used it should be for the fundamental items of a page (#main, #sidebar, ...).
+
+	Also, try to use IDs only to change previously set values not as
+	a general rule of thumb:
+
+	YES :
+		.large_heading { color: red; font-size: 13px; ...}
+		#sidebar .large_heading { color: green; }
+
+	NO :
+		#main .large_heading {}
+		#main .content {}
+		#main .content a {}
+		#main .content ul {}
+
+
+	-----------------------------------------------------------------------
+	
+	AS LITTLE NESTING AS POSSIBLE
+
+	Try to have short rules and meaningful selectors, this makes code reusable,
+	clearer and possibly faster:
+
+	YES :
+		.gallery {}
+		.gallery .gallery_item {}
+		.gallery .item_heading {}
+	NO :
+		section.gallery {}
+		section.gallery div.gallery_heading {}
+		section.gallery div.gallery_item div.item_heading {}
+		
+		or even worse:
+
+		#page .content .gallery {}
+		...
+
+	-----------------------------------------------------------------------
+
+
+
+	THANK YOU!
+
 
 
 ============================================================================= */
