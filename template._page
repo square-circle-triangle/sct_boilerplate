@@ -119,17 +119,47 @@
 				be aware that they can pick heading from h1 to h6
 				best to wrap a tinyMCE area with a div which has a class like "user_editable_text" and
 				use inherited styling:
-				.user_editable_text h1 { ... }
-				.user_editable_text h2 { ... }
-				.user_editable_text ul { ... }
+				.editable_text h1 { ... }
+				.editable_text h2 { ... }
+				.editable_text ul { ... }
 				...
 			-->
 			<div class="editable_text">
-				<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<p><strong>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum..</strong></p><h2>ti sociosqu ad litora torquent per conubia</h2><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p><ul><li>Vivamus id mollis quam. Morbi ac commodo nulla.</li><li>In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu.</li><li>Proin metus odio, aliquam eget molestie nec</li><li>Vivamus rutrum nunc non</li></ul><p>Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis.s suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</p>" %>
+				<%= render :textual => 'tiny_mce_text_unique_name', :type => :multi, :default => "<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, alias, sequi dolorum cupiditate voluptatum </h1><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, corporis facere nihil quisquam </h2><h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, tempora, eius, quasi officiis accusamus </h3><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, soluta, quibusdam, hic, nostrum omnis </h4><h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, molestias, quia, corporis dolore harum</h5><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quo voluptatum repellat debitis obcaecati</h6><p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, sit voluptatum nesciunt dolores iusto minima? Qui, delectus aliquid. Temporibus, dolor voluptatibus non culpa corporis inventore molestias harum explicabo amet deleniti.</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, nemo, deleniti placeat amet adipisci vitae dolorum quos? Praesentium, nisi, labore, expedita doloribus laborum reprehenderit impedit fugiat nulla ab itaque tenetur. <a href=\"#\">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. Laudantium, eum, quasi modi qui ratione quam voluptate libero ullam necessitatibus consectetur veritatis perferendis distinctio! Odio, a illum nobis accusantium blanditiis repellendus.</p><ul><li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li><li>Accusamus, id nihil placeat recusandae autem aperiam magni laborum ipsam eum sunt officia odio harum eligendi sed voluptatem veritatis tempora itaque. Consequatur recusandae tempora mollitia facere dicta debitis sed quasi.</li><li>Officia esse ullam aspernatur <a href=\"#\">Lorem ipsum dolor sit amet</a> rerum id. </li><li>Ad, esse, expedita neque laboriosam vitae a cumque alias blanditiis illo error qui aperiam recusandae.</li></ul><pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nihil, amet, quod, ullam alias accusamus iusto earum sequi eveniet ab nulla autem magni a omnis itaque maiores eligendi at quas.</pre><address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, recusandae possimus ipsam deserunt iste ipsum quam aliquid culpa nesciunt. Deleniti, ratione, officiis saepe vel magni ipsum quas sunt reiciendis exercitationem?</address>" %>
 			</div>
 			
+			<!-- 
+				This example block of text contains all tags that the Blocks tinyMCE editor
+				offers to the user (it is also the default for the regiona above).
+
+				Make sure you cover all of them in your CSS.
+			-->
+
+			<div class="editable_text">
+				<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, alias, sequi dolorum cupiditate voluptatum </h1>
+				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, corporis facere nihil quisquam </h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, tempora, eius, quasi officiis accusamus </h3>
+				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, soluta, quibusdam, hic, nostrum omnis </h4>
+				<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, molestias, quia, corporis dolore harum</h5>
+				<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quo voluptatum repellat debitis obcaecati</h6>
+				
+				<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, sit voluptatum nesciunt dolores iusto minima? Qui, delectus aliquid. Temporibus, dolor voluptatibus non culpa corporis inventore molestias harum explicabo amet deleniti.</strong></p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, nemo, deleniti placeat amet adipisci vitae dolorum quos? Praesentium, nisi, labore, expedita doloribus laborum reprehenderit impedit fugiat nulla ab itaque tenetur. <a href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. Laudantium, eum, quasi modi qui ratione quam voluptate libero ullam necessitatibus consectetur veritatis perferendis distinctio! Odio, a illum nobis accusantium blanditiis repellendus.</p>
+
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li>
+					<li>Accusamus, id nihil placeat recusandae autem aperiam magni laborum ipsam eum sunt officia odio harum eligendi sed voluptatem veritatis tempora itaque. Consequatur recusandae tempora mollitia facere dicta debitis sed quasi.</li>
+					<li>Officia esse ullam aspernatur <a href="#">Lorem ipsum dolor sit amet</a> rerum id. </li>
+					<li>Ad, esse, expedita neque laboriosam vitae a cumque alias blanditiis illo error qui aperiam recusandae.</li>
+				</ul>
+
+				<pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nihil, amet, quod, ullam alias accusamus iusto earum sequi eveniet ab nulla autem magni a omnis itaque maiores eligendi at quas.</pre>
+
+				<address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, recusandae possimus ipsam deserunt iste ipsum quam aliquid culpa nesciunt. Deleniti, ratione, officiis saepe vel magni ipsum quas sunt reiciendis exercitationem?</address>
+			</div>
 			
-			
+
 
 			<!-- MULTILINE TEXT REGION (plain text) -->
 			<!--
