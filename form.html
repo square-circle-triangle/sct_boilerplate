@@ -33,6 +33,62 @@
 				<button id="change_form">Change Form Style (add "vertical" class)</button>
 			</p>
 
+
+			<!--
+				NAMING FORM FIELDS
+
+				Every form submission is stored in the Blocks'/OpenSign's Contacts database,
+				with a number of parameter names which are understood by default:
+
+				title
+				first_name
+				last_name
+				email
+				secondary_email
+
+				home_phone
+				work_phone
+				mobile
+
+				gender
+				dob
+
+				company
+				
+				address
+				suburb
+				town
+				postcode
+				state
+				country
+
+				So if your input field has one of these, Blocks will know how and where to
+				display it.
+
+				If you have any custom fields, you will need to tell Blocks about these.
+				The data will still be stored but the Contacts UI won't offer these fields
+				to the user to create filters or sort the data by.
+
+				1. Create a custom field group (under projects)
+				2. Add it to the same project as your website
+				3. Add the custom fields you need to the new custom field group
+
+				
+				Within your form markup you can refer to your custom fields following
+				this example:
+
+				<input type="text" name="custom_field_group_name[custom_field_name]">
+				
+				
+				To use the user input of this field in a form action email template,
+				you don't use the square brackets but concatenate the two names with
+				an underscore:
+
+				{{ custom_field_group_name_custom_field_name }}
+
+			-->
+
+
 			<form method="POST" action="#" id="form_id" class="form">
 
 				<div class="form_action" style="display:none;">http://form-action-url.dev</div>
