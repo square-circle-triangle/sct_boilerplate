@@ -47,7 +47,7 @@
 			<!-- SEARCH RESULTS HEADING -->
 			<h1>
 				<% if @mode != 'edit' %>
-					<%%= @search.total_entries %> results found for '<%%= @search.query %>'
+					<%%= @search.total_entries %> results found for '<%%= params["term"] %>'
 				<% end %>	
 			</h1>
 			
