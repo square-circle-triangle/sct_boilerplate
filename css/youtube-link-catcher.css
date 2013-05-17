@@ -1,0 +1,123 @@
+/* ------------------------------------
+  YOUTUBE LINK CATCHER LIGHTBOX
+------------------------------------ */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.lightbox .backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/transp/black_80.png");
+  background-repeat: repeat;
+}
+
+.rgba .lightbox .backdrop {
+	background-image: none;
+	background-color: rgba(0,0,0,.8);
+}
+
+
+.lightbox .inner {
+  padding: 30px 20px 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lightbox .vid {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  background-color: #121212;
+  border: 5px solid #121212;
+}
+
+.lightbox .vid iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 2em;
+  padding: 0 8px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.lightbox .map {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	background-color: #121212;
+	border: 5px solid #121212;
+}
+
+.lightbox .map .map_canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+@media only screen and (max-width: 600px){
+  
+  .lightbox .inner {
+    padding: 60px 5px 0 5px;
+  }
+
+  .lightbox .close {
+    font-size: 1.5em;
+  }
+
+
+  .lightbox .map {
+  	padding-bottom: 95%;
+  	padding-top: 0;
+  }
+}
+
+
+.gallery .play_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 109px;
+  height: 109px;
+  margin: -54px 0 0 -54px;
+  background-image: url("../img/icon_video_play.png");
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 580px){
+  .gallery .play_button{
+    width: 54px;
+    height: 54px;
+    background-size: 100% auto;
+    margin: -27px 0 0 -27px;
+  }
+}
+
+
+/* end : youtube link catcher lightbox */
