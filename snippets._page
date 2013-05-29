@@ -113,6 +113,46 @@
 
 
 
+
+
+
+
+
+
+
+
+			<!--
+				HIDE OR SHOW CONTENT WITH ELECTIVE REPEAT REGIONS
+				ALSO SHOW CONTENT ELSEWHERE IF NAMED REGION IS ELECTED
+			-->
+
+			<%= render :region => 'repeating_region_1', :max_repeats => 1, :elective => true do %>
+				<!-- If elected render some HTML -->
+				<!-- this is a repeating region -->
+			<% end %>
+
+
+			<% if @page.regions.find_by_name!('repeating_region_1').elected? == true %>
+				<!-- If true (the named repeat region was elected) render some HTML -->
+			<% end %>
+
+
+			<% if @page.regions.find_by_name!('repeating_region_1').elected? == false %>
+				<!-- If false (the named repeat region was not elected) render some HTML -->
+			<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<!-- 
 				CONTENT REMAPPING
 
