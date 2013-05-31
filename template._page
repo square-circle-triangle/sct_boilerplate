@@ -159,8 +159,6 @@
 				<address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, recusandae possimus ipsam deserunt iste ipsum quam aliquid culpa nesciunt. Deleniti, ratione, officiis saepe vel magni ipsum quas sunt reiciendis exercitationem?</address>
 			</div>
 			
-
-
 			<!-- MULTILINE TEXT REGION (plain text) -->
 			<!--
 				this will render as a plain textarea in edit mode
@@ -210,7 +208,7 @@
 			</form>
 
 
-
+				<%= render :link => "", :text_editable => false, :link_value => '#', :link_attributes => { :class => "your_class" }, :html => { :style => "font-size:1.2em;" } do %><% end %>
 
 
 			<!-- SELECT BOX / SET REGION -->
@@ -240,7 +238,7 @@
 		</footer>
 	</div> <!--! end of #container -->
 
-	<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/jquery-1.9.1.min.js"></script>
+	<script src="/templates/TEMPLATE_GROUP_NAME/js/libs/jquery-1.10.1.min.js"></script>
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/plugins.js"></script>
 	<script src="/templates/TEMPLATE_GROUP_NAME/js/script.js"></script>
 
