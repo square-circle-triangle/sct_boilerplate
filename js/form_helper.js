@@ -109,7 +109,7 @@ var FormHelper = (function(){
 			// Change the default error element to <em> for easy hiding with CSS if not required
 			errorElement: "em",
 			
-			submitHandler: function(){
+			submitHandler: function(form){
 				var $form = $(form); // create form jQuery object
 				
 				if( $form.hasClass('sending') ){
