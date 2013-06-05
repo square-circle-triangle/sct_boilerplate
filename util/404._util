@@ -1,0 +1,50 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="error404 no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="error404 no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="error404 no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="error404 no-js" lang="en"> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>404</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+<!--
+	REPO_NAME
+	404.util
+-->
+<body>
+
+	<h1>404 - Page not found</h1>
+
+	<!--
+		
+		Utility pages are templates for special, unique purposes.
+		You can for example set up error pages for error codes 404 and 500, or
+		use them for the ecommerce features of OpenSign (product detail, categories, ...).
+
+		When a site is created, OpenSign will also create one instance of each utility page template
+		it finds within the template group. Utility pages cannot be deleted or duplicated. Neither
+		can a user pick a utility page template to create a page.
+		On the other hand utility pages have the very same features as normal page templates, thus 
+		can have regions and be edited within OpenSign.
+
+		To set up error pages, the easiest way is to use the most simple page template you have,
+		like a simple text page and copy the code into the 404.util file. This way you do not
+		need to hardcode the error message but the user can edit it within OpenSign using the
+		regions of the template.
+	
+
+		Please note:
+		Rename this file from ._util to .util if you decide to use it.
+		
+	-->
+
+</body>
+</html>
