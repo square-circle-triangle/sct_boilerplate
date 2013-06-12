@@ -1,3 +1,4 @@
+<!-- NAV start: main_auto.nav -->
 <%
 	
 	# check if item is ancestor of current_page_item
@@ -55,3 +56,5 @@
 %>
 
 <%= nav_level(:items => @top_level_items, :max_level => 3) %>
+
+<!-- end : NAV -->

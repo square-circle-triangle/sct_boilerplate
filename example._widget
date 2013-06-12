@@ -1,3 +1,4 @@
+<!-- WIDGET start: example._widget -->
 <!-- 
 	WIDGET
 	--
@@ -17,3 +18,5 @@
 
 
 <!-- your content ... -->
+
+<!-- end : WIDGET -->

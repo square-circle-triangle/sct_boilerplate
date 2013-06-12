@@ -1,3 +1,4 @@
+<!-- NAV start: main.nav -->
 <ul id="" class="top_lvl_menu">
 	<li class="home"><a href="<%= @full_domain %>">Home</a></li>
 	<% @top_level_items.each do |nav_item| %>
@@ -65,5 +66,4 @@
 
 
 
-
-			
+<!-- end : NAV -->

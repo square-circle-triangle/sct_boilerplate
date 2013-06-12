@@ -1,3 +1,4 @@
+<!-- NAV start: content_include.nav -->
 <%
 
 	# v0.1
@@ -103,3 +104,4 @@
 
 %>
 
+<!-- end : NAV -->

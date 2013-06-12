@@ -1,3 +1,4 @@
+<!-- NAV start: region_content_to_json.nav -->
 <%	
 	# this nav loops through pages of a specific template and collects content from a repeating region
 	# which will then be output as a JSON object
@@ -85,3 +86,5 @@
 	]
 
 -->
+
+<!-- end : NAV -->
