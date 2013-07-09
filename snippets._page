@@ -112,7 +112,18 @@
 
 
 
+			<!-- 
+				GET LINK VALUE FROM REGION
+				:original_production_url
 
+				:link_value is also a valid argument, but will return a page's or asset's ID instead of an URL
+				if the region is pointing to page/file in Blocks
+			 -->
+			 <% if @mode == 'edit' %>
+				<%= render :link => "link_region_name", :text_editable => true, :link_value => "#", :text => "Read More" %>
+			 <% else %>
+				<%= @page.elements.detect {|e| e.name == 'link_region_name' }.try(:original_production_url)%>
+			 <% end %>
 
 
 
