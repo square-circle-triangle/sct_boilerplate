@@ -207,6 +207,34 @@
 			<% end %>
 
 			
+
+
+
+			<!-- 
+				LINK REUSE WITHIN WIDGET
+
+				In this example a link has been set within the widget.
+				We then want to reuse that link again on another element.
+			-->
+
+			<!-- set the normal link  -->
+			<%= render :link => "footer_link", :text_editable => false, :link_attributes => { :class => "footer_content" }, :link_value => '#' do %>
+				<h2>Some elements or whatever...</h2>
+			<% end %>
+
+			<!-- get the link for reuse -->
+			<a href="<%= page.elements.find_by_name('footer_link').try(:original_production_url) %>">
+				<h2>Some other elements that require the link or whatever...</h2>
+			</a>
+
+
+
+
+
+
+
+
+
 		</div>
 		<footer>
 			SCT Melbourne &copy; <%= Time.now.year %>
