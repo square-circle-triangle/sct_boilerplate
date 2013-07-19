@@ -245,6 +245,13 @@
 
 
 
+			<!-- GET A SNIPPET/TEXT EXTRACT FROM LONG TEXT -->
+			<!-- this removes tags and returns html safe characters 1 - 71 of the tiny mce region -->
+			<%= strip_tags(nav_item.page_elements('tiny_mce_text_field', :text))[0..70].html_safe %>
+
+
+
+
 
 		</div>
 		<footer>
