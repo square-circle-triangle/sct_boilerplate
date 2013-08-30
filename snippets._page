@@ -57,6 +57,22 @@
 			<%%= p @results %>
 
 
+			<!-- array of attribute names -->
+			<%%#= @search.attributes.keys %>
+
+			<!-- a hash of attribute name/value -->
+			<%%#= @search.attributes %>
+
+		
+
+
+
+
+
+
+
+
+
 			<!-- HELP & HINTS for users -->
 			<% if @mode == 'edit' %>
 				<div class="blocks_help">
@@ -94,6 +110,28 @@
 			<% if @mode == 'edit' || toggle_val == 'ON' %>
 				<h1>Toggable Content</h1>
 			<% end %>
+
+
+
+
+
+			<!--
+				HIDE OR SHOW CONTENT WITH A SELECT BOX ON/OFF CHOICE 
+				OK to use within repeating region
+			-->
+			<% if @mode == 'edit' %>
+				<!-- This will render a simple on/off selectbox -->
+			 	<%= render :set => 'toggle_visibility_01', :values => [ [ 'ON', :ON ], [ 'OFF', :OFF ] ] %>
+			<% end %>
+
+
+			<% if @mode == 'edit' || parent.elements.detect{ |e| e.name == 'toggle_visibility_01' }.try(:selected) == 'ON' %>
+				<!-- something to render -->
+			<% end %>
+
+
+
+
 
 
 
@@ -249,6 +287,56 @@
 			<!-- GET A SNIPPET/TEXT EXTRACT FROM LONG TEXT -->
 			<!-- this removes tags and returns html safe characters 1 - 71 of the tiny mce region -->
 			<%= strip_tags(nav_item.page_elements('tiny_mce_text_field', :text))[0..70].html_safe %>
+
+
+
+
+
+
+			<!-- GET A PAGE ELEMENT AND MAYBE ITS LENGTH OR OTHER ATTRIBUTE -->
+			<!-- the element -->
+			<% variable_name = page.elements.detect{ |e| e.name == 'text1' } %>
+			<!-- the text from this element (depending on availability) -->
+			<% variable_name = page.elements.detect{ |e| e.name == 'text1' }.try(:text) %>
+			<!-- the length of this element's text (if applicable) -->
+			<% variable_name = page.elements.detect{ |e| e.name == 'text1' }.try(:text).length %>
+
+
+
+
+
+
+			<!-- GET A STRING FROM AN INPUT AND MAKE SURE WE CLEAR TRAILING SPACES -->
+			<% _string_var = @page.elements.detect{ |e| e.name == 'bg_color_input' }.try(:text).try(:strip).try(:html_safe) %>
+
+
+			<!-- GET A STRING FROM AN INPUT AND MAKE SURE WE CLEAR TRAILING SPACES -->
+			<%= render(:textual => 'newsletter_date', :default => 'NEWSLETTER APRIL 2012', :maxlength => '50').try(:strip).try(:html_safe) %>
+
+
+
+
+
+
+
+
+
+			<!-- EDM: GET LINKS IN A TINY MCE TO HAVE STYLE TAG OR OTHER EXTRAS WITH FIND REPLACE -->
+			<% if edit_mode? %>
+				<%= render(:textual => 'bodycopy_1', :type => :multi, :default => "<p>Lorem ipsum dolor sit amet</p>") %>
+			<% else %>
+				<%= render(:textual => 'bodycopy_1', :type => :multi, :default => "").gsub("<a ", "<a style=\"text-decoration:underline; color:#{_accent_color};\" " ).html_safe %>
+			<% end %>
+
+
+
+
+
+
+			<!-- GET CURRENT REPEATING REGION FIELD BY NAME (USE INSIDE REPEATING REGION) -->
+			<% if @mode == 'edit' || (parent.elements.detect{ |e| e.name == 'small_heading_1' }.try(:text).length) > 0 %>
+				<!-- something to render -->
+			<% end %>
 
 
 
