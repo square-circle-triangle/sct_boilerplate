@@ -1,0 +1,26 @@
+/*
+	You can use custom values from the customization.yml as variables
+	in your SCSS file.
+	Concatenate group and field name with an underscore and prefix fix $.
+	Examples:
+		1)
+			Group : colors
+			Field : background
+			SCSS  : $colors_background;
+
+		2)
+			Group : e_commerce
+			Field : accepted_currencies
+			SCSS  : $e_commerce_accepted_currencies
+*/
+.home {
+  color: $colors_home;
+}
+
+.away {
+  color: $colors_away;
+}
+
+.third {
+  color: $colors_third;
+}
